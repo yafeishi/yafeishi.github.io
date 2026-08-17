@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
-  title: "关于 — Orcl Yafeishi",
-  description: "关于 Orcl Yafeishi：做事方式、兴趣与联系方式。",
+  title: "关于 — Hobson",
+  description: "关于 Hobson：做事方式、兴趣与联系方式。",
 };
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
       <main className="shell">
         <section className="page-intro">
           <p className="kicker">About</p>
-          <h1>关于夜飞石</h1>
+          <h1>关于 Hobson</h1>
         </section>
 
         <section className="section about-grid">
@@ -34,14 +34,8 @@ export default function AboutPage() {
             </div>
           </div>
           <aside className="portrait">
-            <p className="portrait-name">
-              Orcl
-              <br />
-              Yafeishi
-            </p>
+            <p className="portrait-name">Hobson</p>
             <p className="portrait-meta">
-              夜飞石
-              <br />
               yafeishiorcl@gmail.com
               <br />
               Building in public, quietly.

@@ -17,7 +17,7 @@ REPO_NAME="${PAGES_REPO_NAME:-orcl-homepage}"
 REPO="$OWNER/$REPO_NAME"
 
 if ! gh repo view "$REPO" >/dev/null 2>&1; then
-  gh repo create "$REPO_NAME" --public --source=. --remote=origin --description "Orcl Yafeishi personal homepage"
+  gh repo create "$REPO_NAME" --public --source=. --remote=origin --description "Hobson personal homepage"
 else
   git remote remove origin 2>/dev/null || true
   git remote add origin "https://github.com/$REPO.git"

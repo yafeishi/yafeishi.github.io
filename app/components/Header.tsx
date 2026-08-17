@@ -11,8 +11,8 @@ export function Header({ current }: { current: string }) {
     <header className="site-header">
       <div className="shell header-inner">
         <Link href="/" className="mark">
-          <span className="mark-seal">夜</span>
-          <span className="mark-en">Orcl Yafeishi</span>
+          <span className="mark-seal">H</span>
+          <span className="mark-en">Hobson</span>
         </Link>
         <nav className="nav">
           {links.map((link) => (

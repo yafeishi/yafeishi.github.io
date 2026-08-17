@@ -50,12 +50,10 @@ export default function HomePage() {
           <div>
             <p className="kicker">Personal Page / 个人主页</p>
             <h1>
-              Orcl
-              <br />
-              <em>Yafeishi</em>
+              <em>Hobson</em>
             </h1>
             <p className="lede">
-              你好，我是夜飞石。这是一页给自己用的主页：放作品、放近况，也放还没说完的话。
+              你好，我是 Hobson。这是一页给自己用的主页：放作品、放近况，也放还没说完的话。
             </p>
             <div className="hero-meta">
               <span>Based in the internet</span>

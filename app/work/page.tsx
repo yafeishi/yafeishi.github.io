@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
-  title: "作品 — Orcl Yafeishi",
-  description: "Orcl Yafeishi 的作品与进行中的项目。",
+  title: "作品 — Hobson",
+  description: "Hobson 的作品与进行中的项目。",
 };
 
 const works = [

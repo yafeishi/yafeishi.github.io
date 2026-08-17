@@ -3,8 +3,8 @@ import { Footer } from "./components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Orcl Yafeishi — 个人主页",
-  description: "Orcl Yafeishi 的个人主页：记录想法、作品与正在做的事。",
+  title: "Hobson — 个人主页",
+  description: "Hobson 的个人主页：记录想法、作品与正在做的事。",
 };
 
 export default function RootLayout({
