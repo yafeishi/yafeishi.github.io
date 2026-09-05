@@ -237,6 +237,15 @@ img {
   align-items: center;
   padding: 22px 8px;
   border-top: 1px solid var(--line);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a.work-item:hover {
+  border-color: rgba(201, 164, 106, 0.45);
+}
+
+a.work-item:hover h3 {
+  color: var(--gold-soft);
 }
 
 .work-item:last-child {

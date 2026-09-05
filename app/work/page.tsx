@@ -3,33 +3,54 @@ import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
   title: "作品 — Hobson",
-  description: "Hobson 的作品与进行中的项目。",
+  description: "Hobson 的作品：家庭自动化、IoT、数据库笔记与小工具。",
 };
 
 const works = [
   {
     year: "2026",
-    title: "夜航卡",
-    summary: "用 Next.js App Router 的 page 搭起来的个人主页。一页介绍自己，两页展开关于与作品。",
-    tag: "Web / Next.js",
+    title: "家庭大屏",
+    summary:
+      "1080×1920 竖屏家庭公告板。天气、照片、设备状态贴在墙上，视觉按 Penpot 画板落地。",
+    tag: "Home / Web",
+    href: "https://github.com/danghb/du-home",
+  },
+  {
+    year: "2026",
+    title: "Climate Adapter",
+    summary:
+      "Home Assistant climate 适配层。源集成能调温，却接不住 turn_on / turn_off 时，由这一层补上。",
+    tag: "HA / Python",
+    href: "https://github.com/danghb/climate-proxy",
   },
   {
     year: "2025",
-    title: "日常工具箱",
-    summary: "一组给自己用的小工具：整理笔记、追踪习惯、把重复劳动从浏览器里拿走。",
-    tag: "Tools",
+    title: "YOLO 摸鱼后视镜",
+    summary: "本地摄像头数人、标位置，桌面浮窗先报一声。给自己用的小工具，不为上线。",
+    tag: "Vision / Python",
+    href: "https://github.com/danghb/moyu_yolov8",
   },
   {
-    year: "2024",
-    title: "阅读笔记",
-    summary: "从书、对话和失败项目里抽出可复用的判断，按主题归档，而不是按日期堆放。",
-    tag: "Notes",
+    year: "2025",
+    title: "ESP32 实验",
+    summary: "UART、MQTT 和一块开发板。把家里的设备从「能亮」做到「能说话」。",
+    tag: "IoT",
+    href: "https://github.com/danghb/esp-uart",
   },
   {
-    year: "2023",
-    title: "实验页面",
-    summary: "一些只为试一种排版、一种节奏而存在的页面。大部分没有上线，但留下了手感。",
-    tag: "Studio",
+    year: "2018",
+    title: "AntDB 文章",
+    summary:
+      "从 Oracle 迁到分布式 PostgreSQL 的安装、导出导入、脚本和排障笔记，公开发在 GitHub 与开源中国。",
+    tag: "Database / Notes",
+    href: "https://github.com/yafeishi/antdb-articles",
+  },
+  {
+    year: "2018",
+    title: "yafeishi.com",
+    summary: "个人博客备份：AntDB、Linux、Git，以及那年的工作日志。",
+    tag: "Writing",
+    href: "https://github.com/yafeishi/yafeishi.com",
   },
 ];
 
@@ -45,14 +66,20 @@ export default function WorkPage() {
         <section className="section">
           <div className="work-list">
             {works.map((work) => (
-              <article className="work-item" key={work.title}>
+              <a
+                className="work-item"
+                key={work.title}
+                href={work.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <p className="work-year">{work.year}</p>
                 <div>
                   <h3>{work.title}</h3>
                   <p>{work.summary}</p>
                 </div>
                 <p className="work-tag">{work.tag}</p>
-              </article>
+              </a>
             ))}
           </div>
         </section>
