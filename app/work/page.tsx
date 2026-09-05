@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
@@ -66,8 +67,9 @@ const works = [
     year: "2022—",
     title: "读书笔记库",
     summary:
-      "七十多本书的可检索笔记：个人成长、健康与跑步、历史、经济理财、计算机、小说。不摘金句，只留可复用的判断。",
+      "七十多本书的可检索笔记。公开书单在这里：跑步、健康、数据库、工作、成长、历史和小说。不摘金句，只留可复用的判断。",
     tag: "Notes",
+    href: "/books",
   },
   {
     year: "2022—",
@@ -93,7 +95,13 @@ export default function WorkPage() {
               <article className="work-item" key={work.title}>
                 <p className="work-year">{work.year}</p>
                 <div>
-                  <h3>{work.title}</h3>
+                  <h3>
+                    {"href" in work && work.href ? (
+                      <Link href={work.href}>{work.title}</Link>
+                    ) : (
+                      work.title
+                    )}
+                  </h3>
                   <p>{work.summary}</p>
                 </div>
                 <p className="work-tag">{work.tag}</p>

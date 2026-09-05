@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
@@ -56,7 +57,10 @@ export default function AboutPage() {
               读书不摘金句，只留下次还能用上的判断。最近在做
               life-twin：把多年的笔记喂成一个能用我口吻说话的数字分身。也把这个站点当成自己的地方——别的服务都可能关掉，只要还被人记得，就不会完全消失。
             </p>
-            <p>如果你想聊聊数据库、AI，或只是交换一份书单，欢迎写信。</p>
+            <p>
+              如果你想聊聊数据库、AI，或只是
+              <Link href="/books">交换一份书单</Link>，欢迎写信。
+            </p>
             <div className="cta-row">
               <a className="btn" href="mailto:yafeishiorcl@gmail.com">
                 写信给我
