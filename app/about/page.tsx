@@ -64,18 +64,21 @@ export default function AboutPage() {
             </div>
           </div>
           <aside className="portrait">
-            <p className="portrait-name">Hobson</p>
-            <p className="portrait-meta">
-              Dang Hongbo
-              <br />
-              数据库与 AI 解决方案架构师
-              <br />
-              Shanghai
-              <br />
-              yafeishiorcl@gmail.com
-              <br />
-              西邮 · 软件工程 · 2007–2011
-            </p>
+            <img src="/hobson.jpg?v=anime" alt="Hobson" />
+            <div className="portrait-caption">
+              <p className="portrait-name">Hobson</p>
+              <p className="portrait-meta">
+                Dang Hongbo
+                <br />
+                数据库与 AI 解决方案架构师
+                <br />
+                Shanghai
+                <br />
+                yafeishiorcl@gmail.com
+                <br />
+                西邮 · 软件工程 · 2007–2011
+              </p>
+            </div>
           </aside>
         </section>
 
