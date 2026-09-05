@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hobson — 个人主页",
-  description: "Hobson 的个人主页：记录想法、作品与正在做的事。",
+  description: "Hobson 的个人主页：数据库与 AI 解决方案、跑步、阅读与还没说完的话。",
 };
 
 export default function RootLayout({
