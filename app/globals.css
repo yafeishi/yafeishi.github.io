@@ -262,6 +262,106 @@ img {
   margin-top: 4px;
 }
 
+.note-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.note-item {
+  margin: 0;
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+
+.note-item p {
+  font-family: "Noto Serif SC", serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.note-item cite {
+  display: block;
+  margin-top: 18px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.book-item {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 24px;
+  min-height: 160px;
+}
+
+.book-cat {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.book-item h3 {
+  margin: 16px 0 8px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.book-item p {
+  color: var(--paper-dim);
+  font-size: 0.92rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 22px 8px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-year {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  padding-top: 6px;
+}
+
+.timeline-item h3 {
+  font-family: "Noto Serif SC", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.timeline-item p {
+  color: var(--paper-dim);
+  margin-top: 4px;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -362,6 +462,9 @@ img {
   .hero,
   .about-grid,
   .grid-3,
+  .note-list,
+  .book-list,
+  .timeline-item,
   .work-item {
     grid-template-columns: 1fr;
   }
