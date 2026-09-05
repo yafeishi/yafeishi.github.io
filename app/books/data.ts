@@ -6,7 +6,8 @@ export type Book = {
   cat: string;
   status: BookStatus;
   date?: string;
-  note?: string;
+  note: string;
+  douban: string;
 };
 
 export const BOOK_CATS = [
@@ -20,6 +21,10 @@ export const BOOK_CATS = [
   "社会",
 ] as const;
 
+const subject = (id: string) => `https://book.douban.com/subject/${id}/`;
+const search = (q: string) =>
+  `https://search.douban.com/book/subject_search?search_text=${encodeURIComponent(q)}`;
+
 export const books: Book[] = [
   {
     title: "无伤跑法",
@@ -27,7 +32,8 @@ export const books: Book[] = [
     cat: "跑步",
     status: "读完",
     date: "2025-01",
-    note: "着地时膝盖别锁死。给想无伤跑下去的人。",
+    douban: subject("30394949"),
+    note: "着地时膝盖别锁死，重心略靠前，别甩小腿。训练按 80/10/10，别陷在「慢不下来、快不上去」的中等强度。给想无伤跑下去的人。",
   },
   {
     title: "跑步圣经",
@@ -35,7 +41,8 @@ export const books: Book[] = [
     cat: "跑步",
     status: "在读",
     date: "2025-02",
-    note: "训练要系统，不是靠意志硬扛。",
+    douban: subject("30419545"),
+    note: "训练要系统，不是靠意志硬扛。入门每周 3 次、每次半小时就够养心脏；间隔训练不超过总量的 10%。只跑步不干别的，是进了死胡同。",
   },
   {
     title: "超越百岁",
@@ -43,7 +50,8 @@ export const books: Book[] = [
     cat: "健康",
     status: "读完",
     date: "2025-01",
-    note: "健康是长期资产。",
+    douban: subject("36696538"),
+    note: "健康是长期资产。医学该在疾病扎根之前动手，不该等它根深蒂固再治。正常不等于最佳；忽略情绪健康，追求长寿没有意义。",
   },
   {
     title: "运动改造大脑",
@@ -51,6 +59,8 @@ export const books: Book[] = [
     cat: "健康",
     status: "读完",
     date: "2025-01",
+    douban: subject("36418973"),
+    note: "强健肌肉只是运动的基本作用，关键是改造大脑。大脑和肌肉一样用进废退；每周慢跑两次、每次三十分钟，十二周就能增强执行功能。",
   },
   {
     title: "30分钟中老年力量训练",
@@ -58,6 +68,8 @@ export const books: Book[] = [
     cat: "健康",
     status: "在读",
     date: "2025-01",
+    douban: search("30分钟中老年力量训练 米尔萨德"),
+    note: "力量训练给人的不只是数字，还有「还能轻松继续」的年轻感。适合当作日课里的微力量，而不是等有空再去健身房。",
   },
   {
     title: "一平米健身",
@@ -65,6 +77,8 @@ export const books: Book[] = [
     cat: "健康",
     status: "在读",
     date: "2025-02",
+    douban: search("一平米健身 硬派健身 斌卡"),
+    note: "力量训练提瘦体重，有氧提心肺和脂代谢，二者缺一不可。场地不够大时，先把能做的做起来。",
   },
   {
     title: "无限可能的身体",
@@ -72,13 +86,16 @@ export const books: Book[] = [
     cat: "健康",
     status: "在读",
     date: "2025-01",
+    douban: search("无限可能的身体 卢永利"),
+    note: "最好的医生是太阳、休息、运动、饮食、自尊和朋友。别把健康外包给不断消费的声音。",
   },
   {
     title: "我们为什么要睡觉",
     author: "马修·沃克",
     cat: "健康",
     status: "翻过",
-    note: "睡眠不是可压缩的余量。",
+    douban: subject("35332778"),
+    note: "睡眠不是可压缩的余量。早起鸟和夜猫子大概是部落分工留下的；判断自己睡着，看感知减弱、时间感消失。",
   },
   {
     title: "高性能 MySQL",
@@ -86,7 +103,8 @@ export const books: Book[] = [
     cat: "计算机",
     status: "读完",
     date: "2023-12",
-    note: "调优先看证据，而不是先改参数。",
+    douban: subject("36096578"),
+    note: "调优先看证据，而不是先改参数。锁尽量小，主键尽量短；sync_binlog 建议保持 1。第四版更像大规模运维手册，不再只讲单机调优。",
   },
   {
     title: "云原生数据库：原理与实践",
@@ -94,7 +112,8 @@ export const books: Book[] = [
     cat: "计算机",
     status: "翻过",
     date: "2023-05",
-    note: "原理层，和交付现场对得上。",
+    douban: search("云原生数据库 原理与实践 李飞飞"),
+    note: "原理层，和交付现场对得上。算子就是执行计划的每一步；聚集算子要等子算子全部拉完才能动手。",
   },
   {
     title: "AI未来进行式",
@@ -102,6 +121,8 @@ export const books: Book[] = [
     cat: "计算机",
     status: "在读",
     date: "2024-12",
+    douban: search("AI未来进行式 李开复 陈楸帆"),
+    note: "正确用法是人机协作：AI 做定量、优化和重复，人贡献创造、策略和复杂判断。不是把人换掉，是把人用到长处上。",
   },
   {
     title: "一本书讲透IT售前",
@@ -109,7 +130,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "读完",
     date: "2024-12",
-    note: "和现在的方案工作直接相关。",
+    douban: subject("36400391"),
+    note: "售前的活是给客户一个选择的理由，不是从产品出发自嗨。国产库的复杂度决定了这个岗位的价值；泡在客户那里，才摸得到真需求。",
   },
   {
     title: "工作型PPT该这样做",
@@ -117,6 +139,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "读完",
     date: "2024-12",
+    douban: subject("35044078"),
+    note: "标题先问听众「这跟我有什么关系」。页面上只留最直接的结论，形容词大胆删；说人话，比堆装饰重要。",
   },
   {
     title: "富爸爸穷爸爸",
@@ -124,6 +148,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "读完",
     date: "2025-02",
+    douban: subject("1770782"),
+    note: "要让钱为自己工作，先分清资产和负债。缺的往往不是更多工资，是财商；事情要变，先变自己。",
   },
   {
     title: "我们终将变富",
@@ -131,6 +157,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "读完",
     date: "2024-10",
+    douban: subject("35305219"),
+    note: "能产生收入的才是资产。理财是风险和收益的取舍；保险先给家庭顶梁柱穿上救生衣，再谈指数基金跟着基本面走。",
   },
   {
     title: "需求",
@@ -138,6 +166,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "在读",
     date: "2024-10",
+    douban: subject("10561365"),
+    note: "产品失败，常常因为「我认为这是用户需求」。真正的需求藏在麻烦里：人们买到的和真心想要的之间，差五分钟步行也能决定成败。",
   },
   {
     title: "大厂人才",
@@ -145,6 +175,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "在读",
     date: "2024-12",
+    douban: subject("36687259"),
+    note: "大厂人才体系多半是阶段性方案，不是开宗立派。谷歌 Perf 是目标、自评、同事评、校准、面谈的闭环；外面讲的故事，往往不是里面的人。",
   },
   {
     title: "To B产品经理入门",
@@ -152,6 +184,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "翻过",
     date: "2024-01",
+    douban: search("To B产品经理入门 李鑫"),
+    note: "To C 卖产品体验，To B 卖服务价值。计费本质是单价乘数量；别忘了 B2B 其实是人对人的交易。",
   },
   {
     title: "决胜B端",
@@ -159,6 +193,8 @@ export const books: Book[] = [
     cat: "工作",
     status: "翻过",
     date: "2024-01",
+    douban: search("决胜B端 产品经理升级之路 杨堃"),
+    note: "复杂事先有计划。产品经理最忌凭感觉设计，要到一线看业务人员到底卡在哪；只在后方接需求，价值会很快被削薄。",
   },
   {
     title: "纳瓦尔宝典",
@@ -166,7 +202,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "读完",
     date: "2022-07",
-    note: "读比听快，做比看快。",
+    douban: subject("35876121"),
+    note: "读比听快，做比看快。财富是睡觉时仍能赚钱的资产；先问自己能提供什么独特价值，再谈杠杆和终身学习。",
   },
   {
     title: "认知觉醒",
@@ -174,6 +211,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "读完",
     date: "2025-03",
+    douban: subject("34926463"),
+    note: "人生困扰多半来自选择模糊。理智脑不负责直接干活，它该驱动本能和情绪；怕的事先拆开看清，拖延往往不是事难，是想法糊。",
   },
   {
     title: "美好人生运营指南",
@@ -181,6 +220,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "读完",
     date: "2025-03",
+    douban: search("美好人生运营指南 一稼"),
+    note: "幸福很少是运气，多半是经营。习惯是不需要理由就会执行的动作；存钱先算需要多少，越早让复利开始滚。",
   },
   {
     title: "全面效能",
@@ -188,6 +229,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "读完",
     date: "2024-12",
+    douban: search("全面效能 李云 楼建芳"),
+    note: "一只眼盯业务，一只眼盯自己成长，哪只都不能丢。流程化、工具化、自动化、文档化被反复证明有效；生活是主体，工作只是一部分。",
   },
   {
     title: "精力重启",
@@ -195,6 +238,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "读完",
     date: "2024-11",
+    douban: search("精力重启 彼得·霍林斯"),
+    note: "疲惫常常不是缺觉，是恐惧和过度概化在耗能。能控制的只有自己的态度；想恢复精力，最关键的是先动起来。",
   },
   {
     title: "掌控习惯",
@@ -202,7 +247,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2023-09",
-    note: "系统比意志可靠。",
+    douban: subject("34326931"),
+    note: "系统比意志可靠。目标用来定方向，体系用来持续参赛；习惯该基于身份——目标不是跑马拉松，而是成为跑步的人。",
   },
   {
     title: "福格行为模型",
@@ -210,6 +256,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-12",
+    douban: subject("35594496"),
+    note: "行为 = 动机 × 能力 × 提示。停掉自我批评，把愿望拆成微行为，把每次失误当成发现。提示要锚在确定会发生的事上。",
   },
   {
     title: "人生效率手册",
@@ -217,6 +265,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2025-03",
+    douban: search("人生效率手册 张萌"),
+    note: "事先把目标想清楚，才排得掉干扰。硬本领是能直接打开局面的技能；去影响，而不是去改变别人。敢比会更重要。",
   },
   {
     title: "时间增值",
@@ -224,6 +274,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2025-03",
+    douban: search("时间增值 用有限创造无限 剑飞"),
+    note: "增值多半不靠拉长时间，靠改时间结构。力所能及的事里，只挑一两件打算做一辈子的。想清楚了说不清，就去练写作。",
   },
   {
     title: "时间贫困",
@@ -231,6 +283,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-09",
+    douban: search("时间贫困 凯茜·霍姆斯"),
+    note: "时间贫困是一种感觉：觉得做不完该做和想做的事。时间一去不回，比钱更贵；会说「不」，才守得住真正带来快乐的事。",
   },
   {
     title: "沟通的本质",
@@ -238,6 +292,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-12",
+    douban: search("沟通的本质 罗纳德·阿德勒"),
+    note: "沟通是用信息生成意义。媒介、对象、非语言信号都会改结果；高手靠适应和自我监控，不是靠固定话术。",
   },
   {
     title: "破局",
@@ -245,6 +301,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-10",
+    douban: search("破局 全面提升你的竞争力 月夜生凉"),
+    note: "笔记不多，先记一句：所谓破局，是把竞争力拆开看，而不是等一个转机自己出现。",
   },
   {
     title: "让写作成为自我精进的武器",
@@ -252,6 +310,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-12",
+    douban: search("让写作成为自我精进的武器 师北宸"),
+    note: "写作是技能，也是和自己相处的方法。一篇文章要有清楚的观点，再搜集、修剪、填充；打磨话题，就是逼自己把网状想法写直。",
   },
   {
     title: "我的外婆，从不内耗",
@@ -259,6 +319,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "在读",
     date: "2024-12",
+    douban: search("我的外婆，从不内耗 理微尘"),
+    note: "内耗像橡皮，在理想和现实之间反复擦，最后擦掉的是自己。先停住自我消耗，再谈方法。",
   },
   {
     title: "习惯的力量",
@@ -266,6 +328,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2023-04",
+    douban: subject("5320866"),
+    note: "每天大约四成行为不是决定，是习惯。改命运与其天天做选择，不如改掉那条自动跑的回路。",
   },
   {
     title: "把时间当作朋友",
@@ -273,6 +337,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-09",
+    douban: subject("25749845"),
+    note: "对年轻人，成长比成功重要，路只有一条：积累。比时间更要紧的是注意力；朋友是你愿意花时间做成至少一件事的人。",
   },
   {
     title: "如何成为一个有趣的人",
@@ -280,6 +346,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-05",
+    douban: search("如何成为一个有趣的人 王小圈"),
+    note: "既不愿为正事付出，又嫌消遣回报少，那种空就是无聊。有趣不是表演，是肯为某件事认真花时间。",
   },
   {
     title: "如何做一个情绪稳定的成年人",
@@ -287,6 +355,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-02",
+    douban: search("如何做一个情绪稳定的成年人 清流"),
+    note: "孤独的本质是失连。多数困扰来自次级情绪：不接纳第一下的感受，才叠出一串难受。长期不谈感受，自我会变模糊。",
   },
   {
     title: "一百年，许多人，许多事",
@@ -294,6 +364,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2023-05",
+    douban: search("一百年，许多人，许多事 杨苡"),
+    note: "口述里最清楚的教养是友善、平等，不爱显摆。国家弱时被外国人粗暴对待，是切身感受，不是抽象概念。",
   },
   {
     title: "写作课",
@@ -301,6 +373,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2023-12",
+    douban: search("写作课 叶开"),
+    note: "写作是使不被看见的东西被看见。笔记只留这一句，已经够用。",
   },
   {
     title: "前方高能",
@@ -308,6 +382,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-08",
+    douban: search("前方高能 硬核青年开挂手册"),
+    note: "平静时都解决不了的事，手忙脚乱更解决不了。如何开口是自己的事，对方怎么回是另一套系统。减少内耗：只在能改的事上投专注力。",
   },
   {
     title: "早起的奇迹",
@@ -315,6 +391,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-08",
+    douban: subject("26792532"),
+    note: "习惯先靠行动搭起来，再慢慢加时长。别把生活里的好事推到「有钱、有时间、够健康」以后，那个以后可能永远不来。",
   },
   {
     title: "相信",
@@ -322,6 +400,8 @@ export const books: Book[] = [
     cat: "成长",
     status: "翻过",
     date: "2024-01",
+    douban: search("相信 蔡磊"),
+    note: "技术是昨天的异想天开，今天的勉为其难，明天的习以为常。见过光明就难再忍受黑暗；书里写的是把「相信」落到新药和行动上。",
   },
   {
     title: "人类简史",
@@ -329,7 +409,8 @@ export const books: Book[] = [
     cat: "历史",
     status: "在读",
     date: "2024-11",
-    note: "用来拉开时间尺度。",
+    douban: subject("25985021"),
+    note: "用来拉开时间尺度。智人最独特的能力是讨论虚构事物；农业革命从牛羊的角度看，是一场灾难。权力更常落在社交技巧上，而不是肌肉。",
   },
   {
     title: "显微镜下的大明",
@@ -337,6 +418,8 @@ export const books: Book[] = [
     cat: "历史",
     status: "在读",
     date: "2024-10",
+    douban: subject("30401497"),
+    note: "基层官司里，闹成了往往按闹分配。技术人员爱把事说得更清楚，官场申文却只谈仕途——这两种语言对不上，事情就卡住。",
   },
   {
     title: "曾国藩传",
@@ -344,6 +427,8 @@ export const books: Book[] = [
     cat: "历史",
     status: "翻过",
     date: "2024-05",
+    douban: search("曾国藩传 张宏杰全新增补版"),
+    note: "修身起步要猛，进行中要韧。一生像果子成熟，不能急也不能懈。做事没有奇招，就是扎实；挫辱吞下去，才变成意志的养分。",
   },
   {
     title: "女人的胜利",
@@ -351,6 +436,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "读完",
     date: "2025-02",
+    douban: search("女人的胜利 余华"),
+    note: "余华说，事件成了公开的故事，日常生活反而成了隐秘的故事。短篇里的血、狗和呼叫，都落在那些被忽略的日子上。",
   },
   {
     title: "十八岁出门远行",
@@ -358,7 +445,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "读完",
     date: "2024-09",
-    note: "短，狠。",
+    douban: subject("10522856"),
+    note: "短，狠。他更关心人物的欲望，而不是性格；职业只是外衣。作家要让自己一直待在发现里，而不是守住一个稳定的自己。",
   },
   {
     title: "我胆小如鼠",
@@ -366,6 +454,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "翻过",
     date: "2024-09",
+    douban: subject("1766618"),
+    note: "生日是自己的，不是父母的——他不责怪他们忘掉。不要想的最好办法是不要说；时间会变成最强的免疫力。",
   },
   {
     title: "第七天",
@@ -373,6 +463,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "翻过",
     date: "2024-02",
+    douban: subject("24542462"),
+    note: "死后七日的游走里，金钱在权力面前自惭形秽。余华把新闻里的荒诞收成葬礼，读着并不轻松。",
   },
   {
     title: "长安的荔枝",
@@ -380,6 +472,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "翻过",
     date: "2024-06",
+    douban: subject("36104107"),
+    note: "流程常常是弱者才要守的规矩。绝境里退无可退，只好向前搏；职场、甲方改需求、官场情商，全写在运荔枝这一件事里。",
   },
   {
     title: "太白金星有点烦",
@@ -387,6 +481,8 @@ export const books: Book[] = [
     cat: "小说",
     status: "翻过",
     date: "2024-02",
+    douban: search("太白金星有点烦 马伯庸"),
+    note: "仙界不仙，映射的是官场套话和推诿。人间执念我们无法理解，但不代表那些痛苦不存在。",
   },
   {
     title: "法治的细节",
@@ -394,6 +490,8 @@ export const books: Book[] = [
     cat: "社会",
     status: "翻过",
     date: "2023-10",
+    douban: search("法治的细节 罗翔"),
+    note: "法律管外在行为，道德管内心，后者力量有限。法治的前提是看清人性幽暗；维护秩序的力量本身也要受约束。正义只能是有限的。",
   },
   {
     title: "法律简史",
@@ -401,6 +499,8 @@ export const books: Book[] = [
     cat: "社会",
     status: "翻过",
     date: "2023-09",
+    douban: search("法律简史 桑本谦"),
+    note: "真实世界的法律决策扛不住很高的计算量，复杂问题反而要用简单法则。「杀人偿命，欠债还钱」压到底，是对等返还。没有最优，只有更优。",
   },
   {
     title: "法学的故事",
@@ -408,6 +508,8 @@ export const books: Book[] = [
     cat: "社会",
     status: "翻过",
     date: "2023-10",
+    douban: search("法学的故事 蒋来用"),
+    note: "法强调公平，律强调普遍适用。亚里士多德那句仍管用：被服从的法，本身应当是良好的法。国家存在是为了保护权利，所以权力必须被分割。",
   },
   {
     title: "“她”的力量",
@@ -415,6 +517,8 @@ export const books: Book[] = [
     cat: "社会",
     status: "翻过",
     date: "2024-05",
+    douban: search("她的力量 露西·库克"),
+    note: "「适者生存」不是达尔文原词。科学长期用维多利亚式针孔看雌性；把雌性动物看清楚，演化故事才完整，也更有趣。",
   },
 ];
 

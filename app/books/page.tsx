@@ -18,7 +18,7 @@ export default function BooksPage() {
           <h1>书单</h1>
           <p className="lede">
             从笔记库里列出来的 {books.length}{" "}
-            本。不摘金句；有判断的才写一句，其余只记读到哪。
+            本。推荐语是读书笔记的摘要，书名和「豆瓣」链到豆瓣条目。
           </p>
         </section>
         <section className="section">
