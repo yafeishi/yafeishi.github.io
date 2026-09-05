@@ -8,6 +8,10 @@
   --cinnabar: #c45c3e;
   --line: rgba(244, 234, 216, 0.12);
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", Georgia, serif;
+  --font-display: Georgia, "Times New Roman", "Songti SC", serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
 }
 
 * {
@@ -24,7 +28,7 @@ body {
   min-height: 100vh;
   background: var(--ink);
   color: var(--paper);
-  font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.6;
 }
 
@@ -77,13 +81,13 @@ img {
 }
 
 .mark-seal {
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 1.15rem;
   color: var(--cinnabar);
 }
 
 .mark-en {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--paper-dim);
   text-transform: uppercase;
@@ -92,7 +96,7 @@ img {
 .nav {
   display: flex;
   gap: 28px;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -118,14 +122,14 @@ img {
 
 .hero-spine {
   writing-mode: vertical-rl;
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 0.95rem;
   letter-spacing: 0.42em;
   color: var(--gold);
 }
 
 .kicker {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -134,7 +138,7 @@ img {
 }
 
 .hero h1 {
-  font-family: "Fraunces", "Noto Serif SC", serif;
+  font-family: var(--font-display);
   font-weight: 420;
   font-size: clamp(3.2rem, 8vw, 6.4rem);
   line-height: 0.92;
@@ -158,7 +162,7 @@ img {
   flex-wrap: wrap;
   gap: 12px 28px;
   margin-top: 36px;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--paper-dim);
 }
@@ -177,7 +181,7 @@ img {
 }
 
 .section h2 {
-  font-family: "Fraunces", "Noto Serif SC", serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 420;
 }
@@ -208,7 +212,7 @@ img {
 }
 
 .card-index {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--gold);
   letter-spacing: 0.14em;
@@ -216,7 +220,7 @@ img {
 
 .card h3 {
   margin: 18px 0 12px;
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 1.35rem;
   font-weight: 500;
 }
@@ -245,14 +249,14 @@ img {
 
 .work-year,
 .work-tag {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--gold);
   letter-spacing: 0.08em;
 }
 
 .work-item h3 {
-  font-family: "Fraunces", "Noto Serif SC", serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 420;
 }
@@ -276,7 +280,7 @@ img {
 }
 
 .note-item p {
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 1.15rem;
   line-height: 1.7;
 }
@@ -284,7 +288,7 @@ img {
 .note-item cite {
   display: block;
   margin-top: 18px;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   font-style: normal;
   letter-spacing: 0.12em;
@@ -306,7 +310,7 @@ img {
 }
 
 .book-cat {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -315,7 +319,7 @@ img {
 
 .book-item h3 {
   margin: 16px 0 8px;
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -344,7 +348,7 @@ img {
 }
 
 .timeline-year {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--gold);
   letter-spacing: 0.08em;
@@ -352,7 +356,7 @@ img {
 }
 
 .timeline-item h3 {
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -401,13 +405,13 @@ img {
 }
 
 .portrait-name {
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--font-serif);
   font-size: 2.4rem;
   line-height: 1.15;
 }
 
 .portrait-meta {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--paper-dim);
 }
@@ -427,7 +431,7 @@ img {
   padding: 0 18px;
   border: 1px solid var(--gold);
   color: var(--gold);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -447,7 +451,7 @@ img {
 .site-footer {
   padding: 36px 0 48px;
   color: var(--paper-dim);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
@@ -463,7 +467,7 @@ img {
 }
 
 .page-intro h1 {
-  font-family: "Fraunces", "Noto Serif SC", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 4.6rem);
   font-weight: 420;
   letter-spacing: -0.03em;
