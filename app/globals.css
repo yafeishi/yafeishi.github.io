@@ -261,6 +261,19 @@ img {
   font-weight: 420;
 }
 
+.work-item h3 a:hover,
+.prose a {
+  color: var(--gold);
+}
+
+.prose a {
+  border-bottom: 1px solid var(--line);
+}
+
+.prose a:hover {
+  border-bottom-color: var(--gold);
+}
+
 .work-item p {
   color: var(--paper-dim);
   margin-top: 4px;
@@ -327,6 +340,96 @@ img {
 .book-item p {
   color: var(--paper-dim);
   font-size: 0.92rem;
+}
+
+.book-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.book-filter {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--paper-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.book-filter:hover,
+.book-filter.active {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.book-count {
+  margin: 18px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--paper-dim);
+}
+
+.book-group {
+  margin-top: 36px;
+}
+
+.book-group h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.book-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  padding: 18px 8px;
+  border-top: 1px solid var(--line);
+}
+
+.book-group .book-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.book-row h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.book-row-author {
+  color: var(--paper-dim);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.book-row-note {
+  margin-top: 8px;
+  max-width: 42em;
+  color: var(--paper-dim);
+  font-size: 0.92rem;
+}
+
+.book-row-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-align: right;
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+.book-row-meta span {
+  display: block;
+  margin-top: 6px;
+  color: var(--paper-dim);
 }
 
 .timeline {
@@ -479,6 +582,7 @@ img {
   .grid-3,
   .note-list,
   .book-list,
+  .book-row,
   .timeline-item,
   .work-item {
     grid-template-columns: 1fr;
@@ -491,6 +595,10 @@ img {
 
   .nav {
     gap: 16px;
+  }
+
+  .book-row-meta {
+    text-align: left;
   }
 
   .header-inner,

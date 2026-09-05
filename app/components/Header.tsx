@@ -4,6 +4,7 @@ const links = [
   { href: "/", label: "首页" },
   { href: "/about", label: "关于" },
   { href: "/work", label: "作品" },
+  { href: "/books", label: "书单" },
 ];
 
 export function Header({ current }: { current: string }) {

@@ -197,7 +197,9 @@ export default function HomePage() {
         <section className="shell section">
           <div className="section-head">
             <h2>在读与读过</h2>
-            <p className="section-note">从笔记库里挑几本还想继续谈的。</p>
+            <Link className="btn ghost" href="/books">
+              全部书单
+            </Link>
           </div>
           <div className="book-list">
             {books.map((book) => (
