@@ -36,9 +36,27 @@ export function BooksCatalog() {
             {group.items.map((book) => (
               <article className="book-row" key={`${book.cat}-${book.title}`}>
                 <div>
-                  <h3>{book.title}</h3>
-                  <p className="book-row-author">{book.author}</p>
-                  {book.note ? <p className="book-row-note">{book.note}</p> : null}
+                  <h3>
+                    <a
+                      href={book.douban}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {book.title}
+                    </a>
+                  </h3>
+                  <p className="book-row-author">
+                    {book.author}
+                    <a
+                      className="book-douban"
+                      href={book.douban}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      豆瓣
+                    </a>
+                  </p>
+                  <p className="book-row-note">{book.note}</p>
                 </div>
                 <p className="book-row-meta">
                   {book.status}

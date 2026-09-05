@@ -403,10 +403,27 @@ img {
   font-weight: 500;
 }
 
+.book-row h3 a:hover {
+  color: var(--gold);
+}
+
 .book-row-author {
   color: var(--paper-dim);
   font-size: 0.92rem;
   margin-top: 4px;
+}
+
+.book-douban {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+
+.book-douban:hover {
+  border-bottom-color: var(--gold);
 }
 
 .book-row-note {
