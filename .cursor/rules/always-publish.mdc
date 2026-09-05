@@ -1,0 +1,16 @@
+---
+description: 做完站点改动后直接提交并发布到 danghb.cn，不必再问
+alwaysApply: true
+---
+
+# 做完就提交并发布
+
+站点改动完成后，不要停在「要不要提交 / 要不要推送」。默认直接：
+
+1. 提交本次改动（不要纳入 `tsconfig.tsbuildinfo` 等构建产物）。
+2. 推送当前分支。
+3. 把提交落到 `master`（GitHub Pages 只部署 `master` / `main`）。功能分支推上去不会更新域名。
+4. 等 `Deploy GitHub Pages` 成功。
+5. 核对 https://danghb.cn/ 已是新内容。
+
+不要每次再问用户是否提交、推送或发布。
