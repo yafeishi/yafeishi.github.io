@@ -588,6 +588,7 @@ img {
   width: fit-content;
   max-width: 100%;
   padding: 20px;
+  overflow: visible;
   background: var(--ink-soft);
   border: 1px solid var(--line);
 }
@@ -625,14 +626,15 @@ img {
 }
 
 .wechat-qr {
-  width: 168px;
-  padding: 10px;
-  background: var(--paper);
+  width: 220px;
+  padding: 0;
+  background: #fff;
   flex: 0 0 auto;
 }
 
 .wechat-qr img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -780,7 +782,8 @@ img {
   }
 
   .contact-card {
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
     padding: 16px;
   }
@@ -790,7 +793,7 @@ img {
   }
 
   .wechat-qr {
-    width: min(132px, 36vw);
+    width: min(220px, 72vw);
   }
 
   .book-filters {

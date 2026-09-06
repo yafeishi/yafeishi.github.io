@@ -88,7 +88,7 @@ export default function AboutPage() {
           </div>
           <div className="contact-card">
             <figure className="wechat-qr">
-              <img src="/wechat-qr.jpg?v=2" alt="微信二维码：danghb" />
+              <img src="/wechat-qr.jpg?v=3" alt="微信二维码：danghb" />
             </figure>
             <div>
               <p className="kicker">微信</p>
