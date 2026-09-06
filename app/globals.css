@@ -580,6 +580,40 @@ img {
   color: var(--paper);
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.contact-id {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.contact-hint {
+  margin-top: 10px;
+  color: var(--paper-dim);
+}
+
+.contact-grid .cta-row {
+  margin-top: 24px;
+}
+
+.wechat-qr {
+  width: 196px;
+  padding: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.wechat-qr img {
+  width: 100%;
+  display: block;
+}
+
 .site-footer {
   padding: 36px 0 calc(48px + env(safe-area-inset-bottom));
   color: var(--paper-dim);
@@ -721,6 +755,18 @@ img {
 
   .portrait-caption {
     padding: 40px 18px 18px;
+  }
+
+  .contact-grid {
+    gap: 24px;
+  }
+
+  .contact-id {
+    font-size: 1.7rem;
+  }
+
+  .wechat-qr {
+    width: min(168px, 42vw);
   }
 
   .book-filters {

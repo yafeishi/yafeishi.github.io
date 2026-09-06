@@ -59,13 +59,8 @@ export default function AboutPage() {
             </p>
             <p>
               如果你想聊聊数据库、AI，或只是
-              <Link href="/books">交换一份书单</Link>，欢迎写信。
+              <Link href="/books">交换一份书单</Link>，欢迎写信或加微信。
             </p>
-            <div className="cta-row">
-              <a className="btn" href="mailto:yafeishiorcl@gmail.com">
-                写信给我
-              </a>
-            </div>
           </div>
           <aside className="portrait">
             <img src="/hobson.jpg?v=anime" alt="Hobson" />
@@ -84,6 +79,28 @@ export default function AboutPage() {
               </p>
             </div>
           </aside>
+        </section>
+
+        <section className="section contact">
+          <div className="section-head">
+            <h2>联系</h2>
+            <p className="section-note">写信，或扫码加微信。</p>
+          </div>
+          <div className="contact-grid">
+            <div>
+              <p className="kicker">WeChat</p>
+              <p className="contact-id">danghb</p>
+              <p className="contact-hint">注明来源</p>
+              <div className="cta-row">
+                <a className="btn" href="mailto:yafeishiorcl@gmail.com">
+                  写信给我
+                </a>
+              </div>
+            </div>
+            <figure className="wechat-qr">
+              <img src="/wechat-qr.jpg?v=2" alt="微信二维码：danghb" />
+            </figure>
+          </div>
         </section>
 
         <section className="section">
