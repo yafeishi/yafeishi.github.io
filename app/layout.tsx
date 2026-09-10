@@ -3,8 +3,8 @@ import { Footer } from "./components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hobson — 个人主页",
-  description: "Hobson 的个人主页：数据库与 AI 解决方案、跑步、阅读与还没说完的话。",
+  title: "Hobson — 企业 AI 与数据解决方案架构师",
+  description: "Hobson 的个人主页：企业 AI 转型、Agent 工程化、云数据库、阅读与实践。",
 };
 
 export const viewport: Viewport = {
