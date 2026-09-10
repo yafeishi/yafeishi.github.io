@@ -4,19 +4,19 @@ import { Header } from "../components/Header";
 
 export const metadata: Metadata = {
   title: "关于 — Hobson",
-  description: "关于 Hobson：数据库与 AI 解决方案架构师，做事方式、兴趣与联系方式。",
+  description: "关于 Hobson：企业 AI 与数据解决方案架构师，关注 Agent 工程化、云数据库与企业 AI 转型。",
 };
 
 const career = [
   {
     year: "2022—",
-    role: "数据库解决方案架构师",
-    org: "面向华东金融客户做方案与重点项目支持。",
+    role: "数据库解决方案架构师 / AI 方案实践",
+    org: "面向金融及更多行业做数据库方案与重点项目支持，并探索 AI Agent 在真实交付中的应用。",
   },
   {
     year: "2016—2021",
     role: "AntDB 产品规划、交付负责人",
-    org: "产品规划、交付标准化、售前与信创。",
+    org: "产品规划、交付标准化、售前与信创，累计完成 1000+ 人次内训。",
   },
   {
     year: "2016",
@@ -43,23 +43,23 @@ export default function AboutPage() {
         <section className="section about-grid">
           <div className="prose">
             <p>
-              我在上海，做数据库与 AI 解决方案。十四年里，从 Oracle
-              DBA 走到分布式库的产品与交付，再走进证券、期货、保险这些金融核心系统——选型、PoC、迁移、容灾、信创替代，把方案收到能上线。
+              我在上海，是一名解决方案架构师。十五年里，从 Oracle DBA 走到分布式数据库的产品与交付，再进入证券、期货、保险等金融场景，做选型、PoC、迁移、容灾和信创替代。一路上最重要的能力，不是记住多少产品参数，而是把复杂问题还原成可以决策、可以执行、可以验证的方案。
             </p>
             <p>
-              最近几年也在把大模型用进真实工作：问答 Agent、本地知识库、适配流程，以及给自己用的小工具。做事的信条没变：遇到头疼的事，其实也没那么难，动起来才有进展。
+              现在，我把这套能力继续用在企业 AI 上。关注 AI Agent、MCP、RAG、Agent Memory、Context Engineering、Harness 与 Evaluation，也关心身份、权限、沙箱、审计和可观测性——因为一个 Demo 能回答问题，不代表它已经能进入生产。
             </p>
             <p>
-              工作之外，健康排在第一：没有了好身体，其他都是屁。然后是尽量有意义的工作、纯粹好玩的爱好，以及把关系照顾好。从 2022
-              年起坚持写周记，用记录对抗消耗。
+              我对企业 AI 转型的理解，是先识别高价值活动，挖出隐藏在组织里的 know-how，再以 Context → Decision → Action 为最小单元，重构 Human + AI 工作流。最终要走完 Know-how → Workflow → Agent → Capability，把个人经验变成可复用、可治理、能持续进化的组织能力。
             </p>
             <p>
-              读书不摘金句，只留下次还能用上的判断。最近在做
-              life-twin：把多年的笔记喂成一个能用我口吻说话的数字分身。也把这个站点当成自己的地方——别的服务都可能关掉，只要还被人记得，就不会完全消失。
+              工作之外，健康排在第一，然后是阅读、跑步和记录。从 2022 年起坚持写周记：读书不只摘金句，更想留下次还能用上的判断；写作也不是为了制造内容，而是让思考留下痕迹。
             </p>
             <p>
-              如果你想聊聊数据库、AI，或只是
-              <Link href="/books">交换一份书单</Link>，欢迎写信或加微信。
+              最近在做 life-twin：把多年的笔记变成一个具备混合检索、长期记忆和个人文风的数字分身。也持续用 Codex、Claude Code、Dify、n8n 等工具验证一种新的工作方式：人负责目标、标准与判断，Agent 在清晰边界内执行。
+            </p>
+            <p>
+              如果你想聊聊企业 AI、Agent 工程化、数据库，或只是
+              <Link href="/books">交换一份书单</Link>，欢迎联系我。
             </p>
           </div>
           <aside className="portrait">
@@ -69,7 +69,7 @@ export default function AboutPage() {
               <p className="portrait-meta">
                 Dang Hongbo
                 <br />
-                数据库与 AI 解决方案架构师
+                企业 AI 与数据解决方案架构师
                 <br />
                 Shanghai
                 <br />
@@ -104,7 +104,7 @@ export default function AboutPage() {
         <section className="section">
           <div className="section-head">
             <h2>经历</h2>
-            <p className="section-note">一条从运维到方案的路，写在简历里，也写在这里。</p>
+            <p className="section-note">一条从运维、产品与交付，走向数据和企业 AI 架构的路。</p>
           </div>
           <div className="timeline">
             {career.map((item) => (
