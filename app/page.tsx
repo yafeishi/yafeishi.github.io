@@ -62,6 +62,34 @@ const works = [
   },
 ];
 
+
+const publicProjects = [
+  {
+    name: "taixin-monitor",
+    summary: "本地部署的胎心监护（CTG/NST）辅助分析与记录系统，包含规则引擎、历史记录、趋势标注和 Docker/NAS 部署。",
+    tag: "Health Data / Python",
+    href: "https://github.com/yafeishi/taixin-monitor",
+  },
+  {
+    name: "content-publisher",
+    summary: "面向个人创作者的本地内容工作台，连接 AI、素材、排版、发布平台和 Obsidian。",
+    tag: "Next.js / AI",
+    href: "https://github.com/yafeishi/content-publisher",
+  },
+  {
+    name: "wecom-keepalive",
+    summary: "一个不联网的 macOS Swift 小工具，在明确倒计时后模拟微小鼠标移动。",
+    tag: "macOS / Swift",
+    href: "https://github.com/yafeishi/wecom-keepalive",
+  },
+  {
+    name: "apple-tv-controller",
+    summary: "运行在 macOS 上的本地 Apple TV Web 遥控器，支持发现、配对和常用播放控制。",
+    tag: "macOS / Python",
+    href: "https://github.com/yafeishi/apple-tv-controller",
+  },
+];
+
 const career = [
   {
     year: "2022—",
@@ -132,6 +160,25 @@ export default function HomePage() {
                 <p className="card-index">{item.index}</p>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="shell section">
+          <div className="section-head">
+            <h2>公开项目</h2>
+            <p className="section-note">把个人实践整理成可以复用、验证和持续维护的开源项目。</p>
+          </div>
+          <div className="work-list">
+            {publicProjects.map((project) => (
+              <article className="work-item" key={project.name}>
+                <p className="work-year">OPEN</p>
+                <div>
+                  <h3><a href={project.href} target="_blank" rel="noreferrer">{project.name}</a></h3>
+                  <p>{project.summary}</p>
+                </div>
+                <p className="work-tag">{project.tag}</p>
               </article>
             ))}
           </div>
