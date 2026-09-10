@@ -65,6 +65,12 @@ const works = [
 
 const publicProjects = [
   {
+    name: "ai-time-guard",
+    summary: "本地优先的 macOS AI 编程时间守护工具：按实际活跃时间统计多种 AI 工具，提供每日限额、趋势仪表盘和分享卡片。",
+    tag: "macOS / Python",
+    href: "https://github.com/yafeishi/ai-time-guard",
+  },
+  {
     name: "taixin-monitor",
     summary: "本地部署的胎心监护（CTG/NST）辅助分析与记录系统，包含规则引擎、历史记录、趋势标注和 Docker/NAS 部署。",
     tag: "Health Data / Python",
