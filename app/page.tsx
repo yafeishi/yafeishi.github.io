@@ -41,6 +41,14 @@ const notes = [
 const works = [
   {
     year: "2026",
+    title: "herdr-session-history",
+    summary:
+      "Herdr 的按 pane 会话历史栏：列出当前 agent 会话的用户轮次，点击即可跳回 Grok 对应提示。",
+    tag: "Herdr / Plugin",
+    href: "https://github.com/yafeishi/herdr-session-history",
+  },
+  {
+    year: "2026",
     title: "life-twin 数字分身",
     summary:
       "把多年的 Obsidian 笔记做成能用我口吻说话的第一人称智能体：本地混合检索、长期记忆、文风画像，以及可持续更新的个人上下文。",
@@ -242,7 +250,15 @@ export default function HomePage() {
               <article className="work-item" key={work.title}>
                 <p className="work-year">{work.year}</p>
                 <div>
-                  <h3>{work.title}</h3>
+                  <h3>
+                    {"href" in work && work.href ? (
+                      <a href={work.href} target="_blank" rel="noreferrer">
+                        {work.title}
+                      </a>
+                    ) : (
+                      work.title
+                    )}
+                  </h3>
                   <p>{work.summary}</p>
                 </div>
                 <p className="work-tag">{work.tag}</p>
