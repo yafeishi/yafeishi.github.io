@@ -65,6 +65,13 @@ const works = [
 
 const publicProjects = [
   {
+    name: "herdr-session-history",
+    summary:
+      "Herdr 的按 pane 会话历史栏：列出当前 agent 会话的用户轮次，点击即可跳回 Grok 滚动区对应提示。每个 pane 各自一份历史，关 pane 时栏也一起关掉。",
+    tag: "Herdr / Plugin",
+    href: "https://github.com/yafeishi/herdr-session-history",
+  },
+  {
     name: "ai-time-guard",
     summary: "本地优先的 macOS AI 编程时间守护工具：按实际活跃时间统计多种 AI 工具，提供每日限额、趋势仪表盘和分享卡片。",
     tag: "macOS / Python",

@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 const works = [
   {
     year: "2026",
+    title: "herdr-session-history",
+    summary:
+      "给 Herdr 写的社区插件：每个 agent pane 各自一份当前会话轮次列表，选中一行就把 Grok 滚动区跳到那条用户输入。按 pane 绑定，而不是全局聊天墙。",
+    tag: "Herdr / Plugin",
+    href: "https://github.com/yafeishi/herdr-session-history",
+  },
+  {
+    year: "2026",
     title: "life-twin 数字分身",
     summary:
       "把多年的 Obsidian 笔记做成一个用我口吻说话的第一人称智能体：本地混合检索、长期记忆、文风画像和持续更新的个人上下文。它既是个人工具，也是一次对 RAG 与 Memory 边界的长期实验。",
@@ -104,7 +112,13 @@ export default function WorkPage() {
                 <div>
                   <h3>
                     {"href" in work && work.href ? (
-                      <Link href={work.href}>{work.title}</Link>
+                      work.href.startsWith("http") ? (
+                        <a href={work.href} target="_blank" rel="noreferrer">
+                          {work.title}
+                        </a>
+                      ) : (
+                        <Link href={work.href}>{work.title}</Link>
+                      )
                     ) : (
                       work.title
                     )}
