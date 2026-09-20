@@ -1,0 +1,349 @@
+/* The original stylesheet remains the complete classic theme. */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.theme-switch[hidden] { display: none; }
+
+.theme-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--paper-dim);
+  font: 500 0.8125rem/1.25 var(--font-sans);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.theme-switch button[aria-pressed="true"] {
+  background: rgba(201, 164, 106, 0.14);
+  border-color: rgba(201, 164, 106, 0.3);
+  color: var(--gold-soft);
+}
+
+.theme-swatch {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.theme-swatch-classic {
+  background: linear-gradient(135deg, #1b1712 40%, #c9a46a);
+  border: 1px solid #b38c53;
+}
+
+.theme-swatch-glass {
+  background: linear-gradient(135deg, #c0efff, #e1d2ff 55%, #fff);
+  border: 1px solid #a5b7d5;
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+html[data-theme="glass"] {
+  color-scheme: light;
+  --ink: #f1f5fb;
+  --ink-soft: rgba(255, 255, 255, 0.74);
+  --paper: #182638;
+  --paper-dim: #526174;
+  --gold: #265eac;
+  --gold-soft: #2c61aa;
+  --cinnabar: #3164b6;
+  --line: rgba(63, 89, 130, 0.14);
+  --shadow: 0 16px 44px rgba(43, 70, 112, 0.08);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --font-serif: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-mono: var(--font-sans);
+}
+
+html[data-theme="glass"] body {
+  background: #f1f5fb;
+  isolation: isolate;
+}
+
+html[data-theme="glass"] body::before {
+  z-index: -1;
+  opacity: 1;
+  background:
+    radial-gradient(ellipse at 84% 12%, rgba(176, 177, 245, 0.37), transparent 43%),
+    radial-gradient(ellipse at 9% 35%, rgba(136, 214, 239, 0.3), transparent 48%),
+    radial-gradient(ellipse at 78% 91%, rgba(190, 210, 248, 0.32), transparent 44%),
+    linear-gradient(135deg, #f7fafc, #edf2fa 55%, #f7f9fc);
+}
+
+html[data-theme="glass"] .site-header {
+  top: calc(16px + env(safe-area-inset-top));
+  width: min(1160px, calc(100% - 32px));
+  margin: 16px auto 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: rgba(249, 252, 255, 0.76);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
+  backdrop-filter: blur(24px) saturate(155%);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(141, 161, 193, 0.15), 0 10px 32px rgba(54, 79, 116, 0.09);
+}
+
+html[data-theme="glass"] .header-inner {
+  width: calc(100% - 40px);
+  min-height: 72px;
+  gap: 12px;
+}
+
+html[data-theme="glass"] .mark { align-items: center; gap: 10px; }
+html[data-theme="glass"] .mark-seal {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fff, #dfe9fb);
+  box-shadow: 0 3px 8px rgba(50, 83, 135, 0.09);
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+html[data-theme="glass"] .mark-en { font-size: 0.875rem; letter-spacing: 0; text-transform: none; font-weight: 600; color: var(--paper); }
+html[data-theme="glass"] .nav { gap: 4px; font-size: 0.875rem; letter-spacing: 0; }
+html[data-theme="glass"] .nav a { padding: 0 16px; border-radius: 999px; }
+html[data-theme="glass"] .nav a.active {
+  color: #214f91;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(48, 76, 124, 0.09), inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+html[data-theme="glass"] .theme-switch {
+  background: rgba(212, 223, 240, 0.32);
+  border-color: rgba(154, 176, 210, 0.22);
+}
+html[data-theme="glass"] .theme-switch button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: #fff;
+  color: #234f90;
+  box-shadow: 0 2px 8px rgba(43, 73, 120, 0.12);
+}
+
+html[data-theme="glass"] .hero {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  padding: 84px 0 80px;
+}
+
+/* A quiet, translucent lens gives the hero depth without a moving canvas. */
+html[data-theme="glass"] .hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 320px;
+  height: 360px;
+  right: 4px;
+  top: 106px;
+  transform: rotate(-22deg);
+  border-radius: 46% 54% 58% 42% / 42% 41% 59% 58%;
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.98), transparent 45%),
+    radial-gradient(ellipse at 70% 84%, rgba(166, 182, 246, 0.43), transparent 56%),
+    linear-gradient(130deg, rgba(255, 255, 255, 0.55), rgba(172, 213, 246, 0.22) 40%, rgba(231, 221, 255, 0.52));
+  box-shadow: inset 8px 10px 22px rgba(255, 255, 255, 0.88), inset -10px -10px 30px rgba(144, 169, 218, 0.2), 24px 36px 70px rgba(76, 100, 164, 0.1);
+}
+
+html[data-theme="glass"] .hero-spine {
+  writing-mode: horizontal-tb;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 28px;
+}
+html[data-theme="glass"] .kicker { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.13em; }
+html[data-theme="glass"] .hero h1 { font-size: clamp(4.5rem, 9vw, 7.25rem); font-weight: 650; line-height: 1.04; letter-spacing: -0.07em; }
+html[data-theme="glass"] .hero h1 em { font-style: normal; color: var(--paper); }
+html[data-theme="glass"] .lede { max-width: 670px; font-size: 1.0625rem; line-height: 1.95; margin-top: 24px; }
+html[data-theme="glass"] .hero-meta { font-size: 0.8125rem; gap: 10px 20px; margin-top: 28px; }
+html[data-theme="glass"] .hero-meta span { padding: 6px 12px; background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 999px; }
+
+html[data-theme="glass"] .section { padding: 64px 0; }
+html[data-theme="glass"] .section-head { margin-bottom: 28px; }
+html[data-theme="glass"] .section h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); font-weight: 600; letter-spacing: -0.035em; }
+html[data-theme="glass"] .section-note { font-size: 0.9375rem; line-height: 1.8; }
+html[data-theme="glass"] .page-intro { padding: 64px 0 12px; }
+html[data-theme="glass"] .page-intro h1 { font-weight: 650; letter-spacing: -0.04em; }
+
+html[data-theme="glass"] :is(.card, .note-item, .book-item, .contact-card, .work-item) {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 #fff, var(--shadow);
+}
+html[data-theme="glass"] :is(.card, .note-item, .book-item) { padding: 28px; }
+html[data-theme="glass"] .card-index { font-size: 0.8125rem; font-weight: 600; }
+html[data-theme="glass"] .card h3 { font-weight: 600; letter-spacing: -0.025em; }
+html[data-theme="glass"] .card p { line-height: 1.85; }
+html[data-theme="glass"] .work-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+html[data-theme="glass"] .work-item { grid-template-columns: 1fr; align-content: start; gap: 14px; padding: 28px; }
+html[data-theme="glass"] .work-item h3 { font-size: 1.375rem; font-weight: 600; overflow-wrap: anywhere; }
+html[data-theme="glass"] .work-item p { line-height: 1.8; }
+html[data-theme="glass"] .work-item :is(.work-year, .work-tag) { font-size: 0.8125rem; letter-spacing: 0.04em; }
+html[data-theme="glass"] .work-tag { width: fit-content; padding: 4px 10px; border-radius: 8px; background: rgba(222, 232, 248, 0.6); }
+html[data-theme="glass"] .note-item p { font-size: 1.0625rem; line-height: 1.9; }
+html[data-theme="glass"] .note-item cite { font-size: 0.8125rem; letter-spacing: 0.08em; }
+html[data-theme="glass"] .book-item h3 { font-weight: 600; }
+html[data-theme="glass"] .book-cat { font-size: 0.8125rem; letter-spacing: 0.08em; }
+
+html[data-theme="glass"] .btn {
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(145deg, #3979ce, #265da9);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 7px 16px rgba(40, 90, 163, 0.15);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+html[data-theme="glass"] .btn.ghost {
+  color: #265493;
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #fff, 0 5px 14px rgba(63, 87, 126, 0.07);
+}
+
+html[data-theme="glass"] .book-filters { gap: 8px; }
+html[data-theme="glass"] .book-filter {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+html[data-theme="glass"] .book-filter.active {
+  background: #2b62ac;
+  border-color: #2b62ac;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 83, 147, 0.15);
+}
+html[data-theme="glass"] .book-count { font-size: 0.8125rem; }
+html[data-theme="glass"] .book-group {
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.66);
+}
+html[data-theme="glass"] .book-group h2 { font-weight: 600; margin-bottom: 16px; }
+html[data-theme="glass"] .book-row { padding: 22px 0; }
+html[data-theme="glass"] .book-row h3 { font-weight: 550; }
+html[data-theme="glass"] :is(.book-douban, .book-row-meta) { font-size: 0.8125rem; }
+html[data-theme="glass"] .book-row-note { line-height: 1.85; }
+html[data-theme="glass"] .timeline-item { padding: 26px 0; }
+html[data-theme="glass"] .timeline-year { font-size: 0.8125rem; }
+html[data-theme="glass"] .timeline-item h3 { font-weight: 550; }
+html[data-theme="glass"] .timeline-item p { line-height: 1.8; }
+html[data-theme="glass"] .prose { font-size: 1.0625rem; line-height: 1.95; }
+html[data-theme="glass"] .portrait { border-radius: 28px; border-color: #fff; box-shadow: var(--shadow); }
+html[data-theme="glass"] .portrait-caption { color: #fff; }
+html[data-theme="glass"] .portrait-meta { color: #e6ecf6; font-size: 0.8125rem; }
+html[data-theme="glass"] .contact-card { padding: 28px; }
+html[data-theme="glass"] .wechat-qr { border-radius: 12px; overflow: hidden; }
+html[data-theme="glass"] :is(.contact-mail, .contact-hint) { font-size: 0.875rem; }
+html[data-theme="glass"] .site-footer { font-size: 0.8125rem; letter-spacing: 0.02em; }
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-switch button:hover { background: rgba(150, 150, 150, 0.12); }
+  html[data-theme="glass"] .nav a:hover { background: rgba(255, 255, 255, 0.65); color: #214f91; }
+  html[data-theme="glass"] .card:hover { border-color: #fff; box-shadow: 0 20px 44px rgba(43, 70, 112, 0.12); }
+  html[data-theme="glass"] .btn:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(40, 90, 163, 0.18); }
+}
+html[data-theme="glass"] .btn:active { transform: translateY(1px); }
+
+@media (max-width: 1100px) {
+  .header-actions { gap: 14px; }
+  html[data-theme="glass"] .hero::after { width: 240px; height: 280px; top: 150px; opacity: 0.6; }
+  html[data-theme="glass"] .lede { max-width: 66%; }
+}
+
+@media (max-width: 860px) {
+  .header-actions { gap: 8px 16px; }
+  .header-inner { padding-top: 10px; padding-bottom: 10px; }
+  html[data-theme="glass"] .site-header { border-radius: 28px; }
+  html[data-theme="glass"] .header-inner { width: calc(100% - 28px); padding: 10px 0; }
+  html[data-theme="glass"] .nav a { padding: 0 12px; }
+  html[data-theme="glass"] .hero { padding: 48px 0; }
+  html[data-theme="glass"] .hero::after { display: none; }
+  html[data-theme="glass"] .hero-spine { margin-bottom: 24px; }
+  html[data-theme="glass"] .hero h1 { font-size: clamp(3.8rem, 13vw, 6rem); }
+  html[data-theme="glass"] .lede { max-width: 100%; }
+  html[data-theme="glass"] .section { padding: 44px 0; }
+  html[data-theme="glass"] .work-list { grid-template-columns: 1fr; }
+  html[data-theme="glass"] .page-intro { padding: 44px 0 8px; }
+  html[data-theme="glass"] :is(.card, .note-item, .book-item, .work-item, .book-group, .contact-card) { padding: 22px; border-radius: 20px; }
+}
+
+@media (max-width: 640px) {
+  .header-inner { justify-content: space-between; gap: 8px; }
+  .header-actions { display: contents; }
+  .theme-switch { flex-basis: 100%; justify-content: center; }
+  .theme-switch button { min-height: 40px; padding: 0 10px; }
+  html[data-theme="glass"] .site-header { width: calc(100% - 20px); top: calc(8px + env(safe-area-inset-top)); margin-top: 8px; }
+  html[data-theme="glass"] .header-inner { column-gap: 8px; }
+  html[data-theme="glass"] .mark-seal { width: 28px; height: 28px; border-radius: 9px; }
+  html[data-theme="glass"] .nav a { padding: 0 8px; }
+  html[data-theme="glass"] .hero { padding-top: 38px; }
+  html[data-theme="glass"] .hero-meta { gap: 8px; }
+}
+
+@media (max-width: 380px) {
+  html[data-theme="glass"] .mark-en { display: none; }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  html[data-theme="glass"] .site-header,
+  html[data-theme="glass"] .btn.ghost { background: #f6f9fe; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html[data-theme="glass"] :is(.site-header, .card, .note-item, .book-item, .work-item, .book-group, .contact-card, .btn.ghost) {
+    background: #f8faff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  html[data-theme="glass"] .hero::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .theme-switch button,
+  html[data-theme="glass"] :is(.btn, .card, .nav a) { transition: none; }
+  html[data-theme="glass"] :is(.btn:hover, .btn:active, .card:hover) { transform: none; }
+}

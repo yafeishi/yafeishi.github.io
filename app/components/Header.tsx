@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeSwitch } from "./ThemeSwitch";
 
 const links = [
   { href: "/", label: "首页" },
@@ -15,17 +16,21 @@ export function Header({ current }: { current: string }) {
           <span className="mark-seal">H</span>
           <span className="mark-en">Hobson</span>
         </Link>
-        <nav className="nav">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={current === link.href ? "active" : undefined}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="header-actions">
+          <nav className="nav" aria-label="主导航">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={current === link.href ? "active" : undefined}
+                aria-current={current === link.href ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );
