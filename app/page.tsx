@@ -142,7 +142,7 @@ export default function HomePage() {
   return (
     <>
       <Header current="/" />
-      <main>
+      <main id="main">
         <section className="shell hero">
           <p className="hero-spine">夜航 · 不疾不徐</p>
           <div>

@@ -26,6 +26,9 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
+        <a className="skip-link" href="#main">
+          跳到正文
+        </a>
         {children}
         <Footer />
       </body>

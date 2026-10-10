@@ -99,7 +99,7 @@ export default function WorkPage() {
   return (
     <>
       <Header current="/work" />
-      <main className="shell">
+      <main id="main" className="shell">
         <section className="page-intro">
           <p className="kicker">Selected Practice</p>
           <h1>实践与痕迹</h1>

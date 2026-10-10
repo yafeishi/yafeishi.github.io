@@ -12,7 +12,7 @@ export default function BooksPage() {
   return (
     <>
       <Header current="/books" />
-      <main className="shell">
+      <main id="main" className="shell">
         <section className="page-intro">
           <p className="kicker">Reading List</p>
           <h1>书单</h1>

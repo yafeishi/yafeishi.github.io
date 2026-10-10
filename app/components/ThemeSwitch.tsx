@@ -34,13 +34,13 @@ export function ThemeSwitch() {
 
   return (
     <div className="theme-switch" role="group" aria-label="主页风格" hidden={!ready}>
-      <button type="button" aria-pressed={theme === "classic"} onClick={() => selectTheme("classic")}>
+      <button type="button" title="经典黑金" aria-pressed={theme === "classic"} onClick={() => selectTheme("classic")}>
         <span className="theme-swatch theme-swatch-classic" aria-hidden="true" />
-        经典黑金
+        <span className="theme-label">经典黑金</span>
       </button>
-      <button type="button" aria-pressed={theme === "glass"} onClick={() => selectTheme("glass")}>
+      <button type="button" title="Liquid Glass" aria-pressed={theme === "glass"} onClick={() => selectTheme("glass")}>
         <span className="theme-swatch theme-swatch-glass" aria-hidden="true" />
-        Liquid Glass
+        <span className="theme-label">Liquid Glass</span>
       </button>
     </div>
   );

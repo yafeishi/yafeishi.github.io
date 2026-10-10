@@ -34,7 +34,7 @@ export default function AboutPage() {
   return (
     <>
       <Header current="/about" />
-      <main className="shell">
+      <main id="main" className="shell">
         <section className="page-intro">
           <p className="kicker">About</p>
           <h1>关于 Hobson</h1>
