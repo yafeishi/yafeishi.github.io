@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ui, type Lang } from "../i18n";
 import { THEME_STORAGE_KEY, resolveTheme, type Theme } from "../theme";
 
-export function ThemeSwitch() {
+export function ThemeSwitch({ lang }: { lang: Lang }) {
+  const t = ui[lang];
   const [theme, setTheme] = useState<Theme>("classic");
   const [ready, setReady] = useState(false);
 
@@ -33,14 +35,14 @@ export function ThemeSwitch() {
   }
 
   return (
-    <div className="theme-switch" role="group" aria-label="主页风格" hidden={!ready}>
-      <button type="button" title="经典黑金" aria-pressed={theme === "classic"} onClick={() => selectTheme("classic")}>
+    <div className="theme-switch" role="group" aria-label={t.themeGroup} hidden={!ready}>
+      <button type="button" title={t.themeClassic} aria-pressed={theme === "classic"} onClick={() => selectTheme("classic")}>
         <span className="theme-swatch theme-swatch-classic" aria-hidden="true" />
-        <span className="theme-label">经典黑金</span>
+        <span className="theme-label">{t.themeClassic}</span>
       </button>
-      <button type="button" title="Liquid Glass" aria-pressed={theme === "glass"} onClick={() => selectTheme("glass")}>
+      <button type="button" title={t.themeGlass} aria-pressed={theme === "glass"} onClick={() => selectTheme("glass")}>
         <span className="theme-swatch theme-swatch-glass" aria-hidden="true" />
-        <span className="theme-label">Liquid Glass</span>
+        <span className="theme-label">{t.themeGlass}</span>
       </button>
     </div>
   );

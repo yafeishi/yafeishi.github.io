@@ -8,6 +8,7 @@ export type Book = {
   date?: string;
   note: string;
   douban: string;
+  en: { title: string; author: string; note: string };
 };
 
 export const BOOK_CATS = [
@@ -20,6 +21,23 @@ export const BOOK_CATS = [
   "小说",
   "社会",
 ] as const;
+
+export const BOOK_CAT_EN: Record<(typeof BOOK_CATS)[number], string> = {
+  跑步: "Running",
+  健康: "Health",
+  计算机: "Tech",
+  工作: "Work",
+  成长: "Growth",
+  历史: "History",
+  小说: "Fiction",
+  社会: "Society",
+};
+
+export const BOOK_STATUS_EN: Record<BookStatus, string> = {
+  读完: "Finished",
+  在读: "Reading",
+  翻过: "Skimmed",
+};
 
 const subject = (id: string) => `https://book.douban.com/subject/${id}/`;
 const search = (q: string) =>
@@ -34,6 +52,11 @@ export const books: Book[] = [
     date: "2025-01",
     douban: subject("30394949"),
     note: "着地时膝盖别锁死，重心略靠前，别甩小腿。训练按 80/10/10，别陷在「慢不下来、快不上去」的中等强度。给想无伤跑下去的人。",
+    en: {
+      title: "Injury-Free Running",
+      author: "Dai Jiansong / Zheng Jiaxuan",
+      note: "Don't lock your knees on landing, keep your weight slightly forward, and don't fling your lower legs. Train 80/10/10 and avoid the middle-intensity trap of never easy enough, never hard enough. For anyone who wants to keep running without getting hurt.",
+    },
   },
   {
     title: "跑步圣经",
@@ -43,6 +66,11 @@ export const books: Book[] = [
     date: "2025-02",
     douban: subject("30419545"),
     note: "训练要系统，不是靠意志硬扛。入门每周 3 次、每次半小时就够养心脏；间隔训练不超过总量的 10%。只跑步不干别的，是进了死胡同。",
+    en: {
+      title: "The Running Bible",
+      author: "Herbert Steffny",
+      note: "Training has to be systematic, not a test of willpower. For beginners, three half-hour runs a week are enough to build the heart; intervals should stay under 10% of total volume. Running and nothing else is a dead end.",
+    },
   },
   {
     title: "超越百岁",
@@ -52,6 +80,11 @@ export const books: Book[] = [
     date: "2025-01",
     douban: subject("36696538"),
     note: "健康是长期资产。医学该在疾病扎根之前动手，不该等它根深蒂固再治。正常不等于最佳；忽略情绪健康，追求长寿没有意义。",
+    en: {
+      title: "Outlive",
+      author: "Peter Attia",
+      note: "Health is a long-term asset. Medicine should act before disease takes root, not after it's entrenched. Normal isn't optimal, and chasing longevity while ignoring emotional health is pointless.",
+    },
   },
   {
     title: "运动改造大脑",
@@ -61,6 +94,11 @@ export const books: Book[] = [
     date: "2025-01",
     douban: subject("36418973"),
     note: "强健肌肉只是运动的基本作用，关键是改造大脑。大脑和肌肉一样用进废退；每周慢跑两次、每次三十分钟，十二周就能增强执行功能。",
+    en: {
+      title: "Spark",
+      author: "John Ratey / Eric Hagerman",
+      note: "Building muscle is the least of what exercise does — the real payoff is a rewired brain. The brain, like muscle, is use it or lose it: two 30-minute jogs a week for twelve weeks measurably improve executive function.",
+    },
   },
   {
     title: "30分钟中老年力量训练",
@@ -70,6 +108,11 @@ export const books: Book[] = [
     date: "2025-01",
     douban: search("30分钟中老年力量训练 米尔萨德"),
     note: "力量训练给人的不只是数字，还有「还能轻松继续」的年轻感。适合当作日课里的微力量，而不是等有空再去健身房。",
+    en: {
+      title: "30-Minute Strength Training for Older Adults",
+      author: "Mirsad Hasić",
+      note: "Strength training gives you more than numbers — it gives you the youthful sense that you could easily keep going. Best treated as a small daily dose, not something you save for when you have time for the gym.",
+    },
   },
   {
     title: "一平米健身",
@@ -79,6 +122,11 @@ export const books: Book[] = [
     date: "2025-02",
     douban: search("一平米健身 硬派健身 斌卡"),
     note: "力量训练提瘦体重，有氧提心肺和脂代谢，二者缺一不可。场地不够大时，先把能做的做起来。",
+    en: {
+      title: "One-Square-Meter Fitness",
+      author: "Bin Ka",
+      note: "Strength training builds lean mass; cardio builds your heart and fat metabolism. You need both. If you don't have much space, start with what you can do.",
+    },
   },
   {
     title: "无限可能的身体",
@@ -88,6 +136,11 @@ export const books: Book[] = [
     date: "2025-01",
     douban: search("无限可能的身体 卢永利"),
     note: "最好的医生是太阳、休息、运动、饮食、自尊和朋友。别把健康外包给不断消费的声音。",
+    en: {
+      title: "The Body of Infinite Possibility",
+      author: "Lu Yongli",
+      note: "The best doctors are sunlight, rest, exercise, diet, self-respect and friends. Don't outsource your health to voices that just want you to keep buying.",
+    },
   },
   {
     title: "我们为什么要睡觉",
@@ -96,6 +149,11 @@ export const books: Book[] = [
     status: "翻过",
     douban: subject("35332778"),
     note: "睡眠不是可压缩的余量。早起鸟和夜猫子大概是部落分工留下的；判断自己睡着，看感知减弱、时间感消失。",
+    en: {
+      title: "Why We Sleep",
+      author: "Matthew Walker",
+      note: "Sleep isn't slack you can squeeze. Early birds and night owls are probably a leftover of tribal shift work; you know you've fallen asleep when perception fades and your sense of time disappears.",
+    },
   },
   {
     title: "高性能 MySQL",
@@ -105,6 +163,11 @@ export const books: Book[] = [
     date: "2023-12",
     douban: subject("36096578"),
     note: "调优先看证据，而不是先改参数。锁尽量小，主键尽量短；sync_binlog 建议保持 1。第四版更像大规模运维手册，不再只讲单机调优。",
+    en: {
+      title: "High Performance MySQL",
+      author: "Silvia Botros / Jeremy Tinley",
+      note: "Tune from evidence, not by tweaking parameters first. Keep locks small and primary keys short; keep sync_binlog at 1. The 4th edition reads more like a manual for running MySQL at scale than a single-server tuning guide.",
+    },
   },
   {
     title: "云原生数据库：原理与实践",
@@ -114,6 +177,11 @@ export const books: Book[] = [
     date: "2023-05",
     douban: search("云原生数据库 原理与实践 李飞飞"),
     note: "原理层，和交付现场对得上。算子就是执行计划的每一步；聚集算子要等子算子全部拉完才能动手。",
+    en: {
+      title: "Cloud-Native Databases: Principles and Practice",
+      author: "Li Feifei et al.",
+      note: "Theory that lines up with what you see on real projects. Operators are just the steps of an execution plan, and an aggregate can't start until its children have pulled everything in.",
+    },
   },
   {
     title: "AI未来进行式",
@@ -123,6 +191,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: search("AI未来进行式 李开复 陈楸帆"),
     note: "正确用法是人机协作：AI 做定量、优化和重复，人贡献创造、策略和复杂判断。不是把人换掉，是把人用到长处上。",
+    en: {
+      title: "AI 2041",
+      author: "Kai-Fu Lee / Chen Qiufan",
+      note: "The right model is human–AI collaboration: AI handles the quantitative, the optimizing and the repetitive; people bring creativity, strategy and complex judgment. It's not about replacing people but putting them where they're strongest.",
+    },
   },
   {
     title: "一本书讲透IT售前",
@@ -132,6 +205,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: subject("36400391"),
     note: "售前的活是给客户一个选择的理由，不是从产品出发自嗨。国产库的复杂度决定了这个岗位的价值；泡在客户那里，才摸得到真需求。",
+    en: {
+      title: "IT Presales, Explained",
+      author: "Jiang Zhenbo",
+      note: "Presales is about giving the customer a reason to choose you, not getting carried away with your own product. The complexity of domestic databases is exactly what makes the role valuable — real needs only surface when you spend time on site.",
+    },
   },
   {
     title: "工作型PPT该这样做",
@@ -141,6 +219,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: subject("35044078"),
     note: "标题先问听众「这跟我有什么关系」。页面上只留最直接的结论，形容词大胆删；说人话，比堆装饰重要。",
+    en: {
+      title: "Making Slides That Work",
+      author: "Qin Yang",
+      note: "Every title should answer the audience's question: what does this have to do with me? Keep only the most direct conclusion on the slide and cut adjectives ruthlessly. Plain language beats decoration.",
+    },
   },
   {
     title: "富爸爸穷爸爸",
@@ -150,6 +233,11 @@ export const books: Book[] = [
     date: "2025-02",
     douban: subject("1770782"),
     note: "要让钱为自己工作，先分清资产和负债。缺的往往不是更多工资，是财商；事情要变，先变自己。",
+    en: {
+      title: "Rich Dad Poor Dad",
+      author: "Robert Kiyosaki",
+      note: "To make money work for you, first learn the difference between assets and liabilities. What's missing is usually financial literacy, not a bigger salary — and if you want things to change, start with yourself.",
+    },
   },
   {
     title: "我们终将变富",
@@ -159,6 +247,11 @@ export const books: Book[] = [
     date: "2024-10",
     douban: subject("35305219"),
     note: "能产生收入的才是资产。理财是风险和收益的取舍；保险先给家庭顶梁柱穿上救生衣，再谈指数基金跟着基本面走。",
+    en: {
+      title: "We'll All Get Rich Eventually",
+      author: "Lan Qichang",
+      note: "An asset is something that produces income. Investing is a trade-off between risk and return: first get insurance for the family's breadwinner, then let index funds follow the fundamentals.",
+    },
   },
   {
     title: "需求",
@@ -168,6 +261,11 @@ export const books: Book[] = [
     date: "2024-10",
     douban: subject("10561365"),
     note: "产品失败，常常因为「我认为这是用户需求」。真正的需求藏在麻烦里：人们买到的和真心想要的之间，差五分钟步行也能决定成败。",
+    en: {
+      title: "Demand",
+      author: "Adrian Slywotzky",
+      note: "Products often fail because someone decided \"this is what users need\". Real demand hides in the hassles — the gap between what people buy and what they actually want. Even a five-minute walk can make or break a product.",
+    },
   },
   {
     title: "大厂人才",
@@ -177,6 +275,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: subject("36687259"),
     note: "大厂人才体系多半是阶段性方案，不是开宗立派。谷歌 Perf 是目标、自评、同事评、校准、面谈的闭环；外面讲的故事，往往不是里面的人。",
+    en: {
+      title: "Talent at Big Tech",
+      author: "Lou Jun",
+      note: "Big-tech talent systems are mostly solutions for a particular stage, not timeless doctrine. Google's Perf is a loop of goals, self-review, peer review, calibration and a conversation — and the stories told outside rarely match the people inside.",
+    },
   },
   {
     title: "To B产品经理入门",
@@ -186,6 +289,11 @@ export const books: Book[] = [
     date: "2024-01",
     douban: search("To B产品经理入门 李鑫"),
     note: "To C 卖产品体验，To B 卖服务价值。计费本质是单价乘数量；别忘了 B2B 其实是人对人的交易。",
+    en: {
+      title: "Getting Started as a B2B Product Manager",
+      author: "Li Xin",
+      note: "Consumer products sell experience; B2B products sell service value. Pricing is just unit price times quantity — and never forget that B2B is still people dealing with people.",
+    },
   },
   {
     title: "决胜B端",
@@ -195,6 +303,11 @@ export const books: Book[] = [
     date: "2024-01",
     douban: search("决胜B端 产品经理升级之路 杨堃"),
     note: "复杂事先有计划。产品经理最忌凭感觉设计，要到一线看业务人员到底卡在哪；只在后方接需求，价值会很快被削薄。",
+    en: {
+      title: "Winning in B2B",
+      author: "Yang Kun",
+      note: "Plan complex work before you start. The worst thing a PM can do is design by gut feel: go to the front line and see where people actually get stuck. Sit back and only take requests, and your value thins out fast.",
+    },
   },
   {
     title: "纳瓦尔宝典",
@@ -204,6 +317,11 @@ export const books: Book[] = [
     date: "2022-07",
     douban: subject("35876121"),
     note: "读比听快，做比看快。财富是睡觉时仍能赚钱的资产；先问自己能提供什么独特价值，再谈杠杆和终身学习。",
+    en: {
+      title: "The Almanack of Naval Ravikant",
+      author: "Eric Jorgenson / Naval Ravikant",
+      note: "Reading beats listening, and doing beats watching. Wealth is assets that earn while you sleep; first ask what unique value you can offer, then think about leverage and lifelong learning.",
+    },
   },
   {
     title: "认知觉醒",
@@ -213,6 +331,11 @@ export const books: Book[] = [
     date: "2025-03",
     douban: subject("34926463"),
     note: "人生困扰多半来自选择模糊。理智脑不负责直接干活，它该驱动本能和情绪；怕的事先拆开看清，拖延往往不是事难，是想法糊。",
+    en: {
+      title: "Cognitive Awakening",
+      author: "Zhou Ling",
+      note: "Most of life's frustration comes from fuzzy choices. The rational mind isn't meant to do the work itself — it should steer instinct and emotion. Break down what you fear and look at it clearly; procrastination is usually muddled thinking, not a hard task.",
+    },
   },
   {
     title: "美好人生运营指南",
@@ -222,6 +345,11 @@ export const books: Book[] = [
     date: "2025-03",
     douban: search("美好人生运营指南 一稼"),
     note: "幸福很少是运气，多半是经营。习惯是不需要理由就会执行的动作；存钱先算需要多少，越早让复利开始滚。",
+    en: {
+      title: "A Practical Guide to Running a Good Life",
+      author: "Yi Jia",
+      note: "Happiness is rarely luck; it's mostly management. A habit is something you do without needing a reason. When saving, work out how much you need, and let compounding start as early as possible.",
+    },
   },
   {
     title: "全面效能",
@@ -231,6 +359,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: search("全面效能 李云 楼建芳"),
     note: "一只眼盯业务，一只眼盯自己成长，哪只都不能丢。流程化、工具化、自动化、文档化被反复证明有效；生活是主体，工作只是一部分。",
+    en: {
+      title: "Full-Spectrum Effectiveness",
+      author: "Li Yun / Lou Jianfang",
+      note: "Keep one eye on the business and one on your own growth — you can't drop either. Process, tooling, automation and documentation keep proving their worth; life is the main thing, work is only part of it.",
+    },
   },
   {
     title: "精力重启",
@@ -240,6 +373,11 @@ export const books: Book[] = [
     date: "2024-11",
     douban: search("精力重启 彼得·霍林斯"),
     note: "疲惫常常不是缺觉，是恐惧和过度概化在耗能。能控制的只有自己的态度；想恢复精力，最关键的是先动起来。",
+    en: {
+      title: "Rebooting Your Energy",
+      author: "Peter Hollins",
+      note: "Exhaustion often isn't lack of sleep — it's fear and overgeneralization draining you. The only thing you control is your attitude, and the key to getting your energy back is simply to start moving.",
+    },
   },
   {
     title: "掌控习惯",
@@ -249,6 +387,11 @@ export const books: Book[] = [
     date: "2023-09",
     douban: subject("34326931"),
     note: "系统比意志可靠。目标用来定方向，体系用来持续参赛；习惯该基于身份——目标不是跑马拉松，而是成为跑步的人。",
+    en: {
+      title: "Atomic Habits",
+      author: "James Clear",
+      note: "Systems are more reliable than willpower. Goals set the direction; systems keep you in the game. Habits should be built on identity — the goal isn't to run a marathon, it's to become a runner.",
+    },
   },
   {
     title: "福格行为模型",
@@ -258,6 +401,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: subject("35594496"),
     note: "行为 = 动机 × 能力 × 提示。停掉自我批评，把愿望拆成微行为，把每次失误当成发现。提示要锚在确定会发生的事上。",
+    en: {
+      title: "Tiny Habits",
+      author: "BJ Fogg",
+      note: "Behavior = Motivation × Ability × Prompt. Stop the self-criticism, shrink aspirations into tiny behaviors, and treat every slip as a discovery. Anchor prompts to things that are certain to happen.",
+    },
   },
   {
     title: "人生效率手册",
@@ -267,6 +415,11 @@ export const books: Book[] = [
     date: "2025-03",
     douban: search("人生效率手册 张萌"),
     note: "事先把目标想清楚，才排得掉干扰。硬本领是能直接打开局面的技能；去影响，而不是去改变别人。敢比会更重要。",
+    en: {
+      title: "The Life Efficiency Handbook",
+      author: "Zhang Meng",
+      note: "Think your goals through in advance and you'll be able to filter out distractions. Hard skills are the ones that open doors directly. Influence people rather than trying to change them — daring matters more than knowing how.",
+    },
   },
   {
     title: "时间增值",
@@ -276,6 +429,11 @@ export const books: Book[] = [
     date: "2025-03",
     douban: search("时间增值 用有限创造无限 剑飞"),
     note: "增值多半不靠拉长时间，靠改时间结构。力所能及的事里，只挑一两件打算做一辈子的。想清楚了说不清，就去练写作。",
+    en: {
+      title: "Making Time Count",
+      author: "Jian Fei",
+      note: "Getting more out of time rarely means stretching it; it means restructuring it. Of all the things you could do, pick one or two you intend to do for life. If you can think it but can't say it, practice writing.",
+    },
   },
   {
     title: "时间贫困",
@@ -285,6 +443,11 @@ export const books: Book[] = [
     date: "2024-09",
     douban: search("时间贫困 凯茜·霍姆斯"),
     note: "时间贫困是一种感觉：觉得做不完该做和想做的事。时间一去不回，比钱更贵；会说「不」，才守得住真正带来快乐的事。",
+    en: {
+      title: "Happier Hour",
+      author: "Cassie Holmes",
+      note: "Time poverty is a feeling — that you'll never get through what you have to do and what you want to do. Time never comes back, which makes it dearer than money; learning to say no is how you protect what truly makes you happy.",
+    },
   },
   {
     title: "沟通的本质",
@@ -294,6 +457,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: search("沟通的本质 罗纳德·阿德勒"),
     note: "沟通是用信息生成意义。媒介、对象、非语言信号都会改结果；高手靠适应和自我监控，不是靠固定话术。",
+    en: {
+      title: "Looking Out, Looking In",
+      author: "Ronald Adler et al.",
+      note: "Communication is creating meaning through messages. The medium, the audience and nonverbal signals all change the outcome; good communicators rely on adapting and self-monitoring, not scripted lines.",
+    },
   },
   {
     title: "破局",
@@ -303,6 +471,11 @@ export const books: Book[] = [
     date: "2024-10",
     douban: search("破局 全面提升你的竞争力 月夜生凉"),
     note: "笔记不多，先记一句：所谓破局，是把竞争力拆开看，而不是等一个转机自己出现。",
+    en: {
+      title: "Breaking Through",
+      author: "Yueye Shengliang",
+      note: "Only a few notes, so just one line: breaking through means taking your competitiveness apart and examining it, not waiting for a turning point to show up.",
+    },
   },
   {
     title: "让写作成为自我精进的武器",
@@ -312,6 +485,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: search("让写作成为自我精进的武器 师北宸"),
     note: "写作是技能，也是和自己相处的方法。一篇文章要有清楚的观点，再搜集、修剪、填充；打磨话题，就是逼自己把网状想法写直。",
+    en: {
+      title: "Writing as a Tool for Self-Improvement",
+      author: "Shi Beichen",
+      note: "Writing is a skill and also a way of spending time with yourself. A piece needs a clear point of view, then gathering, trimming and filling in; refining a topic forces tangled thoughts into a straight line.",
+    },
   },
   {
     title: "我的外婆，从不内耗",
@@ -321,6 +499,11 @@ export const books: Book[] = [
     date: "2024-12",
     douban: search("我的外婆，从不内耗 理微尘"),
     note: "内耗像橡皮，在理想和现实之间反复擦，最后擦掉的是自己。先停住自我消耗，再谈方法。",
+    en: {
+      title: "My Grandma Never Wears Herself Out",
+      author: "Li Weichen",
+      note: "Inner friction is like an eraser rubbing back and forth between ideals and reality until what it wears away is you. Stop the self-depletion first; methods come after.",
+    },
   },
   {
     title: "习惯的力量",
@@ -330,6 +513,11 @@ export const books: Book[] = [
     date: "2023-04",
     douban: subject("5320866"),
     note: "每天大约四成行为不是决定，是习惯。改命运与其天天做选择，不如改掉那条自动跑的回路。",
+    en: {
+      title: "The Power of Habit",
+      author: "Charles Duhigg",
+      note: "About 40% of what we do each day isn't decisions but habits. Rather than making choices all day to change your fate, change the loop that runs on autopilot.",
+    },
   },
   {
     title: "把时间当作朋友",
@@ -339,6 +527,11 @@ export const books: Book[] = [
     date: "2024-09",
     douban: subject("25749845"),
     note: "对年轻人，成长比成功重要，路只有一条：积累。比时间更要紧的是注意力；朋友是你愿意花时间做成至少一件事的人。",
+    en: {
+      title: "Make Time Your Friend",
+      author: "Li Xiaolai",
+      note: "For young people, growth matters more than success, and there's only one road: accumulation. Attention matters even more than time; friends are people you're willing to spend time with to get at least one thing done.",
+    },
   },
   {
     title: "如何成为一个有趣的人",
@@ -348,6 +541,11 @@ export const books: Book[] = [
     date: "2024-05",
     douban: search("如何成为一个有趣的人 王小圈"),
     note: "既不愿为正事付出，又嫌消遣回报少，那种空就是无聊。有趣不是表演，是肯为某件事认真花时间。",
+    en: {
+      title: "How to Be an Interesting Person",
+      author: "Wang Xiaoquan",
+      note: "Unwilling to invest in serious things, yet finding pastimes unrewarding — that emptiness is boredom. Being interesting isn't a performance; it's being willing to spend real time on something.",
+    },
   },
   {
     title: "如何做一个情绪稳定的成年人",
@@ -357,6 +555,11 @@ export const books: Book[] = [
     date: "2024-02",
     douban: search("如何做一个情绪稳定的成年人 清流"),
     note: "孤独的本质是失连。多数困扰来自次级情绪：不接纳第一下的感受，才叠出一串难受。长期不谈感受，自我会变模糊。",
+    en: {
+      title: "How to Be an Emotionally Steady Adult",
+      author: "Qing Liu",
+      note: "Loneliness is, at heart, disconnection. Most distress comes from secondary emotions: refusing to accept the first feeling is what piles up the rest. Go long enough without talking about feelings and your sense of self blurs.",
+    },
   },
   {
     title: "一百年，许多人，许多事",
@@ -366,6 +569,11 @@ export const books: Book[] = [
     date: "2023-05",
     douban: search("一百年，许多人，许多事 杨苡"),
     note: "口述里最清楚的教养是友善、平等，不爱显摆。国家弱时被外国人粗暴对待，是切身感受，不是抽象概念。",
+    en: {
+      title: "A Hundred Years, Many People, Many Things",
+      author: "Yang Yi / Yu Bin",
+      note: "The clearest kind of upbringing in this oral history is kindness, equality and no showing off. Being treated roughly by foreigners when the country was weak was a lived experience, not an abstraction.",
+    },
   },
   {
     title: "写作课",
@@ -375,6 +583,11 @@ export const books: Book[] = [
     date: "2023-12",
     douban: search("写作课 叶开"),
     note: "写作是使不被看见的东西被看见。笔记只留这一句，已经够用。",
+    en: {
+      title: "Writing Class",
+      author: "Ye Kai",
+      note: "Writing makes the unseen seen. That's the only line in my notes, and it's enough.",
+    },
   },
   {
     title: "前方高能",
@@ -384,6 +597,11 @@ export const books: Book[] = [
     date: "2024-08",
     douban: search("前方高能 硬核青年开挂手册"),
     note: "平静时都解决不了的事，手忙脚乱更解决不了。如何开口是自己的事，对方怎么回是另一套系统。减少内耗：只在能改的事上投专注力。",
+    en: {
+      title: "Brace Yourself",
+      author: "HeyMatt",
+      note: "If you can't solve it calmly, you won't solve it in a panic. How you speak up is up to you; how the other person responds is a different system. To cut inner friction, put your focus only on what you can change.",
+    },
   },
   {
     title: "早起的奇迹",
@@ -393,6 +611,11 @@ export const books: Book[] = [
     date: "2024-08",
     douban: subject("26792532"),
     note: "习惯先靠行动搭起来，再慢慢加时长。别把生活里的好事推到「有钱、有时间、够健康」以后，那个以后可能永远不来。",
+    en: {
+      title: "The Miracle Morning",
+      author: "Hal Elrod et al.",
+      note: "Build a habit through action first, then slowly add time. Don't postpone the good things in life until you have more money, more time and better health — that \"later\" may never come.",
+    },
   },
   {
     title: "相信",
@@ -402,6 +625,11 @@ export const books: Book[] = [
     date: "2024-01",
     douban: search("相信 蔡磊"),
     note: "技术是昨天的异想天开，今天的勉为其难，明天的习以为常。见过光明就难再忍受黑暗；书里写的是把「相信」落到新药和行动上。",
+    en: {
+      title: "Believe",
+      author: "Cai Lei",
+      note: "Technology is yesterday's fantasy, today's stretch and tomorrow's normal. Once you've seen the light, darkness is hard to bear; the book is about turning belief into new drugs and real action.",
+    },
   },
   {
     title: "人类简史",
@@ -411,6 +639,11 @@ export const books: Book[] = [
     date: "2024-11",
     douban: subject("25985021"),
     note: "用来拉开时间尺度。智人最独特的能力是讨论虚构事物；农业革命从牛羊的角度看，是一场灾难。权力更常落在社交技巧上，而不是肌肉。",
+    en: {
+      title: "Sapiens",
+      author: "Yuval Noah Harari",
+      note: "Good for stretching your sense of time. Sapiens' most unusual ability is talking about things that don't exist; from the point of view of cattle and sheep, the agricultural revolution was a disaster. Power tends to follow social skill, not muscle.",
+    },
   },
   {
     title: "显微镜下的大明",
@@ -420,6 +653,11 @@ export const books: Book[] = [
     date: "2024-10",
     douban: subject("30401497"),
     note: "基层官司里，闹成了往往按闹分配。技术人员爱把事说得更清楚，官场申文却只谈仕途——这两种语言对不上，事情就卡住。",
+    en: {
+      title: "The Ming Dynasty Under a Microscope",
+      author: "Ma Boyong",
+      note: "In local lawsuits, whoever makes the most noise often gets the most. Technical officials want to explain things more clearly, while official memos only care about careers — when those two languages don't meet, everything stalls.",
+    },
   },
   {
     title: "曾国藩传",
@@ -429,6 +667,11 @@ export const books: Book[] = [
     date: "2024-05",
     douban: search("曾国藩传 张宏杰全新增补版"),
     note: "修身起步要猛，进行中要韧。一生像果子成熟，不能急也不能懈。做事没有奇招，就是扎实；挫辱吞下去，才变成意志的养分。",
+    en: {
+      title: "A Biography of Zeng Guofan",
+      author: "Zhang Hongjie",
+      note: "Self-cultivation should start hard and continue with grit. A life ripens like fruit: you can't rush it and you can't slack. There are no clever tricks, only solid work; swallowed humiliations become fuel for the will.",
+    },
   },
   {
     title: "女人的胜利",
@@ -438,6 +681,11 @@ export const books: Book[] = [
     date: "2025-02",
     douban: search("女人的胜利 余华"),
     note: "余华说，事件成了公开的故事，日常生活反而成了隐秘的故事。短篇里的血、狗和呼叫，都落在那些被忽略的日子上。",
+    en: {
+      title: "A Woman's Victory",
+      author: "Yu Hua",
+      note: "Yu Hua says that events become public stories while everyday life becomes the secret one. The blood, the dogs and the shouting in these stories all land on days nobody pays attention to.",
+    },
   },
   {
     title: "十八岁出门远行",
@@ -447,6 +695,11 @@ export const books: Book[] = [
     date: "2024-09",
     douban: subject("10522856"),
     note: "短，狠。他更关心人物的欲望，而不是性格；职业只是外衣。作家要让自己一直待在发现里，而不是守住一个稳定的自己。",
+    en: {
+      title: "On the Road at Eighteen",
+      author: "Yu Hua",
+      note: "Short and brutal. He cares more about characters' desires than their personalities; a job is just a costume. A writer should stay in a state of discovery rather than guard a stable self.",
+    },
   },
   {
     title: "我胆小如鼠",
@@ -456,6 +709,11 @@ export const books: Book[] = [
     date: "2024-09",
     douban: subject("1766618"),
     note: "生日是自己的，不是父母的——他不责怪他们忘掉。不要想的最好办法是不要说；时间会变成最强的免疫力。",
+    en: {
+      title: "I'm as Timid as a Mouse",
+      author: "Yu Hua",
+      note: "A birthday belongs to you, not your parents — he doesn't blame them for forgetting. The best way not to think about something is not to talk about it; time becomes the strongest immunity.",
+    },
   },
   {
     title: "第七天",
@@ -465,6 +723,11 @@ export const books: Book[] = [
     date: "2024-02",
     douban: subject("24542462"),
     note: "死后七日的游走里，金钱在权力面前自惭形秽。余华把新闻里的荒诞收成葬礼，读着并不轻松。",
+    en: {
+      title: "The Seventh Day",
+      author: "Yu Hua",
+      note: "Wandering through the seven days after death, money looks small next to power. Yu Hua gathers the absurdities of the news into a funeral; it isn't easy reading.",
+    },
   },
   {
     title: "长安的荔枝",
@@ -474,6 +737,11 @@ export const books: Book[] = [
     date: "2024-06",
     douban: subject("36104107"),
     note: "流程常常是弱者才要守的规矩。绝境里退无可退，只好向前搏；职场、甲方改需求、官场情商，全写在运荔枝这一件事里。",
+    en: {
+      title: "The Lychees of Chang'an",
+      author: "Ma Boyong",
+      note: "Procedures are often rules only the weak have to follow. With nowhere left to retreat, the only way is forward; office life, clients changing requirements and bureaucratic savvy are all packed into one lychee delivery.",
+    },
   },
   {
     title: "太白金星有点烦",
@@ -483,6 +751,11 @@ export const books: Book[] = [
     date: "2024-02",
     douban: search("太白金星有点烦 马伯庸"),
     note: "仙界不仙，映射的是官场套话和推诿。人间执念我们无法理解，但不代表那些痛苦不存在。",
+    en: {
+      title: "Taibai Jinxing Has Had Enough",
+      author: "Ma Boyong",
+      note: "The heavens aren't heavenly — they mirror bureaucratic boilerplate and buck-passing. We may not understand mortal obsessions, but that doesn't mean the pain isn't real.",
+    },
   },
   {
     title: "法治的细节",
@@ -492,6 +765,11 @@ export const books: Book[] = [
     date: "2023-10",
     douban: search("法治的细节 罗翔"),
     note: "法律管外在行为，道德管内心，后者力量有限。法治的前提是看清人性幽暗；维护秩序的力量本身也要受约束。正义只能是有限的。",
+    en: {
+      title: "The Details of the Rule of Law",
+      author: "Luo Xiang",
+      note: "Law governs outward behavior; morality governs the heart, and its power is limited. The rule of law starts from a clear view of human darkness, and the forces that keep order must themselves be restrained. Justice can only ever be limited.",
+    },
   },
   {
     title: "法律简史",
@@ -501,6 +779,11 @@ export const books: Book[] = [
     date: "2023-09",
     douban: search("法律简史 桑本谦"),
     note: "真实世界的法律决策扛不住很高的计算量，复杂问题反而要用简单法则。「杀人偿命，欠债还钱」压到底，是对等返还。没有最优，只有更优。",
+    en: {
+      title: "A Brief History of Law",
+      author: "Sang Benqian",
+      note: "Real-world legal decisions can't afford heavy computation, so complex problems call for simple rules. \"A life for a life, pay what you owe\" boils down to reciprocity. There's no optimum, only better.",
+    },
   },
   {
     title: "法学的故事",
@@ -510,6 +793,11 @@ export const books: Book[] = [
     date: "2023-10",
     douban: search("法学的故事 蒋来用"),
     note: "法强调公平，律强调普遍适用。亚里士多德那句仍管用：被服从的法，本身应当是良好的法。国家存在是为了保护权利，所以权力必须被分割。",
+    en: {
+      title: "The Story of Jurisprudence",
+      author: "Jiang Laiyong",
+      note: "Law emphasizes fairness; rules emphasize universal application. Aristotle still holds: the law that is obeyed should itself be good law. The state exists to protect rights, so power has to be divided.",
+    },
   },
   {
     title: "“她”的力量",
@@ -519,6 +807,11 @@ export const books: Book[] = [
     date: "2024-05",
     douban: search("她的力量 露西·库克"),
     note: "「适者生存」不是达尔文原词。科学长期用维多利亚式针孔看雌性；把雌性动物看清楚，演化故事才完整，也更有趣。",
+    en: {
+      title: "Bitch: On the Female of the Species",
+      author: "Lucy Cooke",
+      note: "\"Survival of the fittest\" isn't Darwin's phrase. For a long time science viewed females through a Victorian pinhole; only by seeing female animals clearly does the story of evolution become complete — and more interesting.",
+    },
   },
 ];
 

@@ -179,6 +179,13 @@ img {
   color: var(--gold);
 }
 
+:lang(en) .hero-spine {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
 .kicker {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -389,6 +396,43 @@ img {
   color: var(--paper-dim);
   margin-top: 6px;
   line-height: 1.75;
+}
+
+.work-item .work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+
+.github-line {
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
+}
+
+.github-line a {
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.github-line a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.book-original {
+  margin-left: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--paper-dim);
 }
 
 .note-list {
@@ -723,13 +767,18 @@ img {
 }
 
 .contact-mail {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 16px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--paper-dim);
   letter-spacing: 0.04em;
   word-break: break-all;
+}
+
+.contact-mail + .contact-mail {
+  margin-top: 6px;
 }
 
 .contact-mail:hover {

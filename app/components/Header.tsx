@@ -1,35 +1,36 @@
 import Link from "next/link";
+import { localePath, ui, type Lang, type PagePath } from "../i18n";
+import { LangSwitch } from "./LangSwitch";
 import { ThemeSwitch } from "./ThemeSwitch";
 
-const links = [
-  { href: "/", label: "首页" },
-  { href: "/about", label: "关于" },
-  { href: "/work", label: "实践" },
-  { href: "/books", label: "书单" },
-];
+const paths: PagePath[] = ["/", "/about", "/work", "/books"];
 
-export function Header({ current }: { current: string }) {
+export function Header({ lang, current }: { lang: Lang; current: PagePath }) {
+  const t = ui[lang];
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <Link href="/" className="mark">
+        <Link href={localePath(lang, "/")} className="mark">
           <span className="mark-seal">H</span>
           <span className="mark-en">Hobson</span>
         </Link>
         <div className="header-actions">
-          <nav className="nav" aria-label="主导航">
-            {links.map((link) => (
+          <nav className="nav" aria-label={t.navLabel}>
+            {paths.map((path) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className={current === link.href ? "active" : undefined}
-                aria-current={current === link.href ? "page" : undefined}
+                key={path}
+                href={localePath(lang, path)}
+                className={current === path ? "active" : undefined}
+                aria-current={current === path ? "page" : undefined}
               >
-                {link.label}
+                {t.nav[path]}
               </Link>
             ))}
           </nav>
-          <ThemeSwitch />
+          <div className="header-controls">
+            <ThemeSwitch lang={lang} />
+            <LangSwitch lang={lang} current={current} />
+          </div>
         </div>
       </div>
     </header>
