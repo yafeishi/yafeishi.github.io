@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { Header } from "../components/Header";
+import { BOOK_CAT_EN, books } from "../content/books";
+import { career } from "../content/career";
 import { GITHUB_SYNCED_AT, githubProfile, publicProjects } from "../content/github";
 import { localePath, type Lang } from "../i18n";
 import { ProjectMeta } from "./ProjectMeta";
+
+const featuredBooks = ["无伤跑法", "跑步圣经", "高性能 MySQL", "云原生数据库：原理与实践", "纳瓦尔宝典", "人类简史"].map(
+  (title) => books.find((book) => book.title === title)!,
+);
 
 const content = {
   zh: {
@@ -31,23 +37,6 @@ const content = {
     github: `GitHub @${githubProfile.login} · ${githubProfile.publicRepos} 个公开仓库 · ${githubProfile.bio} · 同步于 ${GITHUB_SYNCED_AT}`,
     careerTitle: "经历",
     careerNote: "从数据库运维与产品，走向数据与企业 AI 解决方案。",
-    career: [
-      {
-        year: "2022—",
-        role: "数据库解决方案架构师 / AI 方案实践",
-        org: "服务金融及更多行业，负责数据库选型、PoC、迁移与容灾，并探索 Agent、知识库和评测在真实交付中的应用。",
-      },
-      {
-        year: "2016—2021",
-        role: "AntDB 产品规划与交付",
-        org: "分布式数据库的规划、标准化、售前与信创。内训 1000+ 人，也在 PostgreSQL 社区做过分享。",
-      },
-      {
-        year: "2011—2016",
-        role: "Oracle DBA / 技术顾问",
-        org: "运营商核心系统的安装、架构、优化与培训，后来负责 SQL 审核产品的 PoC 和专项调优。",
-      },
-    ],
     notesTitle: "我的判断",
     notesNote: "关于企业 AI、工程落地，以及如何真正把事情做成。",
     notes: [
@@ -93,14 +82,6 @@ const content = {
     ],
     booksTitle: "工作之外",
     booksAll: "全部书单",
-    books: [
-      { title: "无伤跑法", author: "戴剑松 / 郑家轩", cat: "跑步" },
-      { title: "跑步圣经", author: "赫尔伯特·史迪凡尼", cat: "跑步" },
-      { title: "高性能 MySQL", author: "Baron Schwartz 等", cat: "数据库" },
-      { title: "云原生数据库：原理与实践", author: "李飞飞 等", cat: "数据库" },
-      { title: "纳瓦尔宝典", author: "纳瓦尔", cat: "成长" },
-      { title: "人类简史", author: "尤瓦尔·赫拉利", cat: "历史" },
-    ],
   },
   en: {
     spine: "Night voyage · unhurried",
@@ -128,23 +109,6 @@ const content = {
     github: `GitHub @${githubProfile.login} · ${githubProfile.publicRepos} public repos · ${githubProfile.bio} · synced ${GITHUB_SYNCED_AT}`,
     careerTitle: "Experience",
     careerNote: "From database operations and product work to data and enterprise AI solutions.",
-    career: [
-      {
-        year: "2022—",
-        role: "Database Solutions Architect / Applied AI",
-        org: "Database selection, PoCs, migration and disaster recovery for financial services and beyond — plus putting agents, knowledge bases and evaluation to work in real delivery.",
-      },
-      {
-        year: "2016—2021",
-        role: "AntDB Product Planning & Delivery",
-        org: "Roadmap, delivery standards, presales and domestic-stack replacement for a distributed database. Trained 1,000+ colleagues and spoke at PostgreSQL community events.",
-      },
-      {
-        year: "2011—2016",
-        role: "Oracle DBA / Technical Consultant",
-        org: "Installation, architecture, tuning and training for telecom core systems; later led PoCs and performance engagements for a SQL review product.",
-      },
-    ],
     notesTitle: "What I believe",
     notesNote: "On enterprise AI, engineering that ships, and how things actually get done.",
     notes: [
@@ -193,14 +157,6 @@ const content = {
     ],
     booksTitle: "Beyond work",
     booksAll: "Full reading list",
-    books: [
-      { title: "Injury-Free Running", author: "Dai Jiansong / Zheng Jiaxuan", cat: "Running" },
-      { title: "The Running Bible", author: "Herbert Steffny", cat: "Running" },
-      { title: "High Performance MySQL", author: "Baron Schwartz et al.", cat: "Databases" },
-      { title: "Cloud-Native Databases: Principles and Practice", author: "Li Feifei et al.", cat: "Databases" },
-      { title: "The Almanack of Naval Ravikant", author: "Naval Ravikant", cat: "Growth" },
-      { title: "Sapiens", author: "Yuval Noah Harari", cat: "History" },
-    ],
   },
 };
 
@@ -213,7 +169,7 @@ export function HomeView({ lang }: { lang: Lang }) {
         <section className="shell hero">
           <p className="hero-spine">{t.spine}</p>
           <div>
-            <p className="kicker">Solution Architect / AI × Data</p>
+            <p className="kicker">Solutions Architect / AI × Data</p>
             <h1>
               <em>Hobson</em>
             </h1>
@@ -284,7 +240,7 @@ export function HomeView({ lang }: { lang: Lang }) {
             <p className="section-note">{t.careerNote}</p>
           </div>
           <div className="timeline">
-            {t.career.map((item) => (
+            {career[lang].map((item) => (
               <article className="timeline-item" key={item.year}>
                 <p className="timeline-year">{item.year}</p>
                 <div>
@@ -348,11 +304,13 @@ export function HomeView({ lang }: { lang: Lang }) {
             </Link>
           </div>
           <div className="book-list">
-            {t.books.map((book) => (
+            {featuredBooks.map((book) => (
               <article className="book-item" key={book.title}>
-                <p className="book-cat">{book.cat}</p>
-                <h3>{book.title}</h3>
-                <p>{book.author}</p>
+                <p className="book-cat">
+                  {lang === "en" ? BOOK_CAT_EN[book.cat as keyof typeof BOOK_CAT_EN] : book.cat}
+                </p>
+                <h3>{lang === "en" ? book.en.title : book.title}</h3>
+                <p>{lang === "en" ? book.en.author : book.author}</p>
               </article>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Header } from "../components/Header";
+import { career } from "../content/career";
 import { githubProfile } from "../content/github";
 import { localePath, type Lang } from "../i18n";
 
@@ -25,20 +26,6 @@ const content = {
     wechatHint: "注明来源",
     careerTitle: "经历",
     careerNote: "一条从运维、产品与交付，走向数据和企业 AI 架构的路。",
-    career: [
-      {
-        year: "2022—",
-        role: "数据库解决方案架构师 / AI 方案实践",
-        org: "面向金融及更多行业做数据库方案与重点项目支持，并探索 AI Agent 在真实交付中的应用。",
-      },
-      {
-        year: "2016—2021",
-        role: "AntDB 产品规划、交付负责人",
-        org: "产品规划、交付标准化、售前与信创，累计完成 1000+ 人次内训。",
-      },
-      { year: "2016", role: "Oracle 技术顾问", org: "SQL 审核产品的售前、PoC 与性能优化。" },
-      { year: "2011—2015", role: "Oracle DBA", org: "多省运营商 CRM / BOSS 等系统的部署、架构与优化。" },
-    ],
   },
   en: {
     title: "About Hobson",
@@ -61,24 +48,6 @@ const content = {
     wechatHint: "Please mention where you found me",
     careerTitle: "Experience",
     careerNote: "A path from operations, product and delivery to data and enterprise AI architecture.",
-    career: [
-      {
-        year: "2022—",
-        role: "Database Solutions Architect / Applied AI",
-        org: "Database solutions and key-project support for financial services and other industries, while exploring how AI agents hold up in real delivery.",
-      },
-      {
-        year: "2016—2021",
-        role: "AntDB Product Planning & Delivery Lead",
-        org: "Product planning, delivery standards, presales and domestic-stack replacement; delivered internal training to 1,000+ attendees.",
-      },
-      { year: "2016", role: "Oracle Technical Consultant", org: "Presales, PoCs and performance tuning for a SQL review product." },
-      {
-        year: "2011—2015",
-        role: "Oracle DBA",
-        org: "Deployment, architecture and tuning of CRM, BOSS and other systems for provincial telecom carriers.",
-      },
-    ],
   },
 };
 
@@ -152,7 +121,7 @@ export function AboutView({ lang }: { lang: Lang }) {
             <p className="section-note">{t.careerNote}</p>
           </div>
           <div className="timeline">
-            {t.career.map((item) => (
+            {career[lang].map((item) => (
               <article className="timeline-item" key={`${item.year}-${item.role}`}>
                 <p className="timeline-year">{item.year}</p>
                 <div>

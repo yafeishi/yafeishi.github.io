@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Header } from "../components/Header";
+import { books } from "../content/books";
 import { localePath, type Lang } from "../i18n";
 
 type Work = {
@@ -130,12 +131,12 @@ const works: Work[] = [
     tag: "Product",
     zh: {
       title: "AntDB 产品规划与交付",
-      summary: "负责分布式数据库的产品规划、交付标准化、售前与信创。做过内训师，累计培训一千多人，也主导过认证课程。",
+      summary: "负责分布式数据库的产品规划、交付标准化、售前与信创。做过内训师，累计完成一千多人次培训，也主导过认证课程。",
     },
     en: {
       title: "AntDB product planning & delivery",
       summary:
-        "Owned product planning, delivery standards, presales and domestic-stack replacement for a distributed database. Also an internal trainer — more than a thousand people trained — and led the certification course.",
+        "Owned product planning, delivery standards, presales and domestic-stack replacement for a distributed database. Also an internal trainer — 1,000+ attendees trained — and led the certification course.",
     },
   },
   {
@@ -183,12 +184,12 @@ const works: Work[] = [
     href: "/books",
     zh: {
       title: "周记与读书笔记库",
-      summary: "持续存档工作与生活，也积累七十多本书的可检索笔记。用记录对抗消耗，不只收藏观点，更留下可以复用的判断。",
+      summary: `持续存档工作与生活，也积累了七十多本书的可检索笔记，其中 ${books.length} 本整理成了公开书单。用记录对抗消耗，不只收藏观点，更留下可以复用的判断。`,
     },
     en: {
       title: "Weekly journal & reading notes",
       summary:
-        "An ongoing archive of work and life, plus searchable notes on more than seventy books. Writing things down pushes back against burnout — not just collecting opinions, but keeping judgments I can reuse.",
+        `An ongoing archive of work and life, plus searchable notes on more than seventy books — ${books.length} of them make up the public reading list. Writing things down pushes back against burnout — not just collecting opinions, but keeping judgments I can reuse.`,
     },
   },
 ];
