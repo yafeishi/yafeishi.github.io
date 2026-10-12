@@ -16,6 +16,7 @@ const content = {
     lede: "你好，我是 Hobson，一名解决方案架构师。十五年里，从 Oracle DBA、分布式数据库和金融核心系统，走到企业 AI 与 Agent 工程化。我的工作始终站在业务、客户与技术的交汇处：把复杂问题拆清楚，把隐性 know-how 沉淀下来，再把方案做到真实环境里。",
     ctaWork: "查看实践",
     ctaAbout: "关于我",
+    x: "推特 @yafeishi",
     focusTitle: "此刻在做",
     focusNote: "把多年数据与架构经验，转化为企业 AI 时代可复用、可验证的交付能力。",
     focuses: [
@@ -88,6 +89,7 @@ const content = {
     lede: "Hi, I'm Hobson, a solutions architect. Over fifteen years I've moved from Oracle DBA work, distributed databases and core financial systems to enterprise AI and agent engineering. My work has always sat where business, customers and technology meet: untangling complex problems, capturing the know-how people carry in their heads, and getting solutions running in real environments.",
     ctaWork: "See my work",
     ctaAbout: "About me",
+    x: "X @yafeishi",
     focusTitle: "What I'm working on",
     focusNote: "Turning years of data and architecture experience into delivery capabilities for the AI era — reusable and verifiable.",
     focuses: [
@@ -177,6 +179,9 @@ export function HomeView({ lang }: { lang: Lang }) {
             <div className="hero-meta">
               <span>Enterprise AI · Data · Agent</span>
               <span>Context → Decision → Action</span>
+              <a href="https://x.com/yafeishi" target="_blank" rel="noreferrer">
+                {t.x}
+              </a>
             </div>
             <div className="cta-row">
               <Link className="btn" href={localePath(lang, "/work")}>

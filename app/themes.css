@@ -226,7 +226,7 @@ html[data-theme="glass"] .hero h1 { font-size: clamp(4.5rem, 9vw, 7.25rem); font
 html[data-theme="glass"] .hero h1 em { font-style: normal; color: var(--paper); }
 html[data-theme="glass"] .lede { max-width: 670px; font-size: 1.0625rem; line-height: 1.95; margin-top: 24px; }
 html[data-theme="glass"] .hero-meta { font-size: 0.8125rem; gap: 10px 20px; margin-top: 28px; }
-html[data-theme="glass"] .hero-meta span { padding: 6px 12px; background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 999px; }
+html[data-theme="glass"] .hero-meta :is(span, a) { padding: 6px 12px; background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 999px; }
 
 html[data-theme="glass"] .section { padding: 64px 0; }
 html[data-theme="glass"] .section-head { margin-bottom: 28px; }

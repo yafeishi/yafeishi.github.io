@@ -111,6 +111,9 @@ export function AboutView({ lang }: { lang: Lang }) {
               <a className="contact-mail" href={githubProfile.url} target="_blank" rel="noreferrer">
                 github.com/{githubProfile.login}
               </a>
+              <a className="contact-mail" href="https://x.com/yafeishi" target="_blank" rel="noreferrer">
+                x.com/yafeishi
+              </a>
             </div>
           </div>
         </section>

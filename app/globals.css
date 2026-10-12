@@ -226,10 +226,19 @@ img {
   color: var(--paper-dim);
 }
 
-.hero-meta span {
+.hero-meta :is(span, a) {
   padding: 5px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
+}
+
+.hero-meta a {
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-meta a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .section {
