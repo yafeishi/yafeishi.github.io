@@ -194,6 +194,27 @@ export function HomeView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {lang === "zh" && (
+          <section className="shell section">
+            <div className="section-head">
+              <h2>最新文章</h2>
+              <p className="section-note">调研与实践笔记。</p>
+            </div>
+            <div className="work-list">
+              <article className="work-item">
+                <p className="work-year">2026-10</p>
+                <div>
+                  <h3>
+                    <Link href="/notes/ego-browser">为什么 ego 浏览器比 Chrome 更适合 Agent</Link>
+                  </h3>
+                  <p>ego (lite) 基于 Chromium，让 Agent 在独立 Space 里复用你的登录态，一段脚本完成多步操作。快在少往返、少读图、少登录、不抢屏。</p>
+                </div>
+                <p className="work-tag">Agent / Browser</p>
+              </article>
+            </div>
+          </section>
+        )}
+
         <section className="shell section">
           <div className="section-head">
             <h2>{t.focusTitle}</h2>
