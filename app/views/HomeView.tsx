@@ -205,6 +205,36 @@ export function HomeView({ lang }: { lang: Lang }) {
                 <p className="work-year">2026-10</p>
                 <div>
                   <h3>
+                    <Link href="/notes/hermes-ttft">【实测】Hermes 里 6 个模型，谁先吐字？</Link>
+                  </h3>
+                  <p>Mac Mini 上测 Hermes 原生 gateway 的首字延迟。短提示下 MiniMax-M3.1-Flash 中位 0.89 秒，DeepSeek V4.1 Flash 0.91 秒；Kimi 追问到 13.81 秒。样本小，不是智商榜。</p>
+                </div>
+                <p className="work-tag">Hermes / TTFT</p>
+              </article>
+              <article className="work-item">
+                <p className="work-year">2026-10</p>
+                <div>
+                  <h3>
+                    <Link href="/notes/gpt-6-tiers">GPT-6 四档怎么选？</Link>
+                  </h3>
+                  <p>Astra、Sol、Terra、Luna。难的用强的，简单的用省的。价格按 OpenAI 文档的 API 每百万 token 口径。</p>
+                </div>
+                <p className="work-tag">Model / GPT-6</p>
+              </article>
+              <article className="work-item">
+                <p className="work-year">2026-10</p>
+                <div>
+                  <h3>
+                    <Link href="/notes/google-ai-pro-family">Google AI Pro 家庭组</Link>
+                  </h3>
+                  <p>一人订阅，全家共享。每人 $25/年，周期 2026-10-25 至 2027-10-25，最多 5 位成员。</p>
+                </div>
+                <p className="work-tag">Google / AI Pro</p>
+              </article>
+              <article className="work-item">
+                <p className="work-year">2026-10</p>
+                <div>
+                  <h3>
                     <Link href="/notes/ego-browser">为什么 ego 浏览器比 Chrome 更适合 Agent</Link>
                   </h3>
                   <p>ego (lite) 基于 Chromium，让 Agent 在独立 Space 里复用你的登录态，一段脚本完成多步操作。快在少往返、少读图、少登录、不抢屏。</p>
