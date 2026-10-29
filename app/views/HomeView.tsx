@@ -201,6 +201,20 @@ export function HomeView({ lang }: { lang: Lang }) {
               <p className="section-note">调研与实践笔记。</p>
             </div>
             <div className="work-list">
+              {/* content-publisher:latest-notes:start */}
+              {/* content-publisher:latest-notes-data:W3sic2x1ZyI6Im1hYy13b3JrYnVkZHkiLCJkYXRlIjoiMjAyNi0xMC0yOSIsInRpdGxlIjoi5omL5py66YGl5o6nIE1hY++8mldvcmtCdWRkeSDov5znqIvlt7LpgJoiLCJzdW1tYXJ5Ijoi5LuK5aSp5oqKIFdvcmtCdWRkeSDov5znqIvpgaXmjqfot5HpgJrkuobvvJrmiYvmnLrlkIzotKblj7fov57kuIrvvIzog73lrp7ml7bnnIvmoYzpnaLvvIzkuZ/og73pgaXmjqfplK7pvKDjgIIiLCJraWNrZXIiOiJXb3JrQnVkZHkifV0= */}
+              <article className="work-item" data-publisher-slug="mac-workbuddy">
+                <p className="work-year">{"2026-10"}</p>
+                <div>
+                  <h3>
+                    <Link href="/notes/mac-workbuddy">{"手机遥控 Mac：WorkBuddy 远程已通"}</Link>
+                  </h3>
+                  <p>{"今天把 WorkBuddy 远程遥控跑通了：手机同账号连上，能实时看桌面，也能遥控键鼠。"}</p>
+                </div>
+                <p className="work-tag">{"WorkBuddy"}</p>
+              </article>
+              {/* content-publisher:latest-notes:end */}
+
               <article className="work-item">
                 <p className="work-year">2026-10</p>
                 <div>
