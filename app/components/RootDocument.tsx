@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { HTML_LANG, SITE_URL, ui, type Lang } from "../i18n";
 import { headInitScript } from "../theme";
 import { Footer } from "./Footer";
+import { VisitBeacon } from "./VisitBeacon";
 import "../globals.css";
 import "../themes.css";
 
@@ -25,6 +26,7 @@ export function RootDocument({ lang, children }: { lang: Lang; children: React.R
         </a>
         {children}
         <Footer lang={lang} />
+        <VisitBeacon />
       </body>
     </html>
   );
