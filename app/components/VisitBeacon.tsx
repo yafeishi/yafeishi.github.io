@@ -9,10 +9,15 @@ export function VisitBeacon() {
     window.__hobsonHitSent=1;
     var path=location.pathname||"/";
     var payload=JSON.stringify({path:path,referrer:document.referrer||""});
-    if(navigator.sendBeacon){
-      navigator.sendBeacon("${HIT_ENDPOINT}", new Blob([payload],{type:"application/json"}));
-    }else{
-      fetch("${HIT_ENDPOINT}",{method:"POST",headers:{"Content-Type":"application/json"},body:payload,keepalive:true,mode:"cors",credentials:"omit"}).catch(function(){});
+    var url="${HIT_ENDPOINT}";
+    var ok=false;
+    try{
+      if(navigator.sendBeacon){
+        ok=navigator.sendBeacon(url, new Blob([payload],{type:"text/plain;charset=UTF-8"}));
+      }
+    }catch(e){ok=false;}
+    if(!ok){
+      fetch(url,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:payload,keepalive:true,mode:"cors",credentials:"omit"}).catch(function(){});
     }
   }catch(e){}
 })();`;
